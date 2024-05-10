@@ -3,12 +3,12 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Spesialis training kepabeanan, ekspor, dan impor",
-  description: "Contact us page",
+  title: "About Us - Spesialis training kepabeanan, ekspor, dan impor",
+  description: "About us page",
   // other metadata
 };
 
-const SupportPage = () => {
+const aboutPage = () => {
   return (
     <div className="pb-20 pt-40">
       <Contact />
@@ -16,4 +16,4 @@ const SupportPage = () => {
   );
 };
 
-export default SupportPage;
+export default aboutPage;
