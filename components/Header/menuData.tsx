@@ -22,7 +22,7 @@ const menuData: Menu[] = [
         id: 31,
         title: "Konsultasi Masalah Kepabeanan dan Cukai",
         newTab: false,
-        path: "",
+        path: "/Service1",
       },
       {
         id: 34,

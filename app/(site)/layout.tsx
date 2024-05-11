@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Inter } from "next/font/google";
 import "../globals.css";
@@ -16,8 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${inter.className}`}>
-        <Header />
+      <body className={`${inter.className}`}>
         <ToasterContext />
         {children}
         <ScrollToTop />

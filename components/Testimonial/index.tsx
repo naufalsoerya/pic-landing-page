@@ -14,15 +14,14 @@ import { testimonialData } from "./testimonialData";
 const Testimonial = () => {
   return (
     <>
-      <section>
+      <section className="mt-20">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           {/* <!-- Section Title Start --> */}
           <div className="animate_top mx-auto text-center">
             <SectionHeader
               headerInfo={{
-                title: `TESTIMONIALS`,
-                subtitle: `Client’s Testimonials`,
-                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+                subtitle: `Testimonials`,
+                description: `Beberapa testimonial dari client yang telah bekerja sama dengan kami.`,
               }}
             />
           </div>
@@ -45,10 +44,10 @@ const Testimonial = () => {
           whileInView="visible"
           transition={{ duration: 1, delay: 0.1 }}
           viewport={{ once: true }}
-          className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-20 xl:px-0"
+          className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-12 xl:px-0"
         >
           {/* <!-- Slider main container --> */}
-          <div className="swiper testimonial-01 mb-20 pb-22.5">
+          <div className="swiper testimonial-01 mb-20 pb-10">
             {/* <!-- Additional required wrapper --> */}
             <Swiper
               spaceBetween={50}
