@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Jumbotron from "@/components/Jumbotron";
 import Feature from "@/components/Features";
 import Header from "@/components/Header";
+import Jumbotron2 from "@/components/Jumbotron2";
 
 export const metadata: Metadata = {
   title: "PIC Training - Spesialis training kepabeanan, ekspor, dan impor",
@@ -17,6 +18,7 @@ export default function Home() {
       <Jumbotron />
       <Hero />
       <Feature />
+      <Jumbotron2 />
     </main>
   );
 }

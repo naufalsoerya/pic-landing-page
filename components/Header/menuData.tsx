@@ -28,31 +28,31 @@ const menuData: Menu[] = [
         id: 34,
         title: "Penetapan Klasifikasi Barang",
         newTab: false,
-        path: "",
+        path: "/Service2",
       },
       {
         id: 35,
         title: "Audit Kepabeanan dan Cukai",
         newTab: false,
-        path: "",
+        path: "/Service3",
       },
       {
         id: 36,
         title: "Review Kepatuhan dan Mitigasi Risiko",
         newTab: false,
-        path: "",
+        path: "/Service4",
       },
       {
         id: 37,
         title: "Inhouse Training Kepabeanan dan Cukai",
         newTab: false,
-        path: "",
+        path: "/Service5",
       },
       {
         id: 38,
         title: "Keberatan dan Banding Kepabeanan dan Cukai",
         newTab: false,
-        path: "",
+        path: "/Service6",
       }
     ],
   },
@@ -91,7 +91,7 @@ const menuData: Menu[] = [
     id: 5,
     title: "Contact Us",
     newTab: false,
-    path: "/support",
+    path: "/contact",
   },
 ];
 

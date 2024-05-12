@@ -43,7 +43,7 @@ const FormContact = () => {
       ...prevState,
       [name]: selectedOptions,
     }));
-  };  
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -98,7 +98,7 @@ const FormContact = () => {
     <div>
       {/* Jumbotron 1*/}
       <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white">
-        <h1 className="ml-12 mt-6 text-5xl font-bold">Konsultasi Masalah</h1>
+        <h1 className="ml-12 mt-6 text-5xl font-bold">Inhouse Training</h1>
         <h2 className="font-lg ml-12 text-2xl">Kepabeanan dan Cukai</h2>
       </div>
       {/* Jumbotron 1*/}
@@ -111,34 +111,42 @@ const FormContact = () => {
               <div>
                 <img
                   className="mb-8 mt-20 h-64 w-full rounded-lg"
-                  src="/images/about/service1.jpg"
+                  src="/images/about/service5.jpg"
                   alt="product image"
                 />
               </div>
               <h1 className="mb-5 text-3xl font-bold text-black">
-                Konsultasi Masalah Kepabeanan dan Cukai
+                Inhouse Training Kepabeanan dan Cukai
               </h1>
               <p className="mb-5 text-justify">
-                Ketentuan regulasi kepabeanan dan cukai yang semakin dinamis
-                seringkali tidak dapat diikuti oleh stakeholder dengan cepat.
-                Sebagai akibatnya, timbul masalah-masalah kepabeanan dan cukai
-                yang berpotensi merugikan baik secara finansiil maupun
-                inefisiensi waktu layanan bagi stake holder. <br />
+                Pengembangan SDM agar mampu menjalankan fungsinya dengan baik
+                perlu mendapatkan bekal pelatihan untuk meningkatkan
+                kompetensinya. Bagi perusahaan yang menjalankan kegiatan ekspor
+                impor, logistik, pelayaran dan sebagainya, kebutuhan update
+                terhadap kompetensi kepabeanan menjadi suatu hal yang mutlak
+                diperlukan. <br />
               </p>
               <p className="mb-5 text-justify">
-                PIC hadir untuk memberikan advis dan solusi terhadap gap
-                informasi terkait dinamika regulasi kepabeanan dan cukai.{" "}
                 <span className="font-bold">
-                  Konsultasikan masalah Kepabeanan dan Cukai Anda kepada kami
-                  dan temukan solusi terbaik dari para Expert kami.
+                  PIC telah berpengalaman sebagai provider training kepabeanan
+                  terbaik sejak tahun 2015. Kami siap memberikan pelatihan
+                  kepabeanan dan perdagangan internasional sesuai kebutuhan Tim
+                  Eksim Perusahaan Anda.
                 </span>{" "}
+                Apabila training kepabeanan Tim Anda membutuhkan Sertifikat Ahli
+                Kepabeanan (SAK), PIC Training juga menyediakan pelatihan khusus
+                persiapan Ujian SAK.{" "}
+                <span className="font-bold">
+                  Silahkan klik pada Menu Training Kepabeanan
+                </span>{" "}
+                di bagian atas
                 <br />
               </p>
               <p className="mb-5 text-justify">
                 Kami memaklumi kesibukan dan menghargai waktu Anda yang sangat
                 berharga. Untuk itu, konsultasi yang kami berikan sangat
                 fleksibel mengikuti kesiapan Anda. Media konsultasi dapat
-                dipilih sesuai kenyamanan Anda.
+                dipilih sesuai kenyamanan Anda
               </p>
             </div>
 

@@ -7,7 +7,7 @@ const featuresData: Feature[] = [
     title: "Konsultasi Masalah Kepabeanan dan Cukai",
     description:
       "Konsultasikan masalah Kepabeanan dan Cukai Anda kepada kami dan temukan solusi terbaik dari para Expert kami. Hubungi kami untuk info lengkap.",
-    link: "/konsultasi",
+    link: "/Service1",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const featuresData: Feature[] = [
     title: "Penetapan Klasifikasi Barang",
     description:
       "Butuh Advis tentang penetapan klasifikasi  atas barang impor atau ekspor ? Expert kami sangat berpengalaman dalam bidang ini. Hubungi kami untuk info lengkap.",
-    link: "/konsultasi",
+    link: "/Service2",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const featuresData: Feature[] = [
     title: "Audit Kepabeanan dan Cukai",
     description:
       "Tim kami akan membantu kesiapan perusahaan Anda dan melakukan pre-Audit  sebelum Auditor DJBC melakukan audit kepabeanan/cukai.",
-    link: "/konsultasi",
+    link: "/Service3",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const featuresData: Feature[] = [
     title: "Review Kepatuhan dan Mitigasi Resiko",
     description:
       "Perusahaan Anda penerima fasilitas Kepabeanan? Tim Kami akan membantu melakukan review kepatuhan terhadap regulasi kepabeanan dan memberikan advis untuk mitigasi resiko pelanggaran.",
-    link: "/konsultasi",
+    link: "/Service4",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const featuresData: Feature[] = [
     title: "Inhouse Training Kepabeanan dan Cukai",
     description:
       "PIC telah berpengalaman sebagai provider training kepabeanan terbaik sejak tahun 2015. Kami siap memberikan pelatihan kepabeanan dan perdagangan internasional sesuai kebutuhan Tim Eksim Perusahaan Anda.",
-    link: "/konsultasi",
+    link: "/Service5",
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ const featuresData: Feature[] = [
     title: "Keberatan dan Banding Kepabeanan dan Cukai",
     description:
       "Perusahan Anda terkena notul SPTNP ataupun SPKTNP dan Anda tidak puas dengan itu? Tim kami akan membantu Anda melakukan upaya keberatan kepada DJBC maupun banding ke Pengadilan pajak.",
-    link: "/konsultasi",
+    link: "/Service6",
   },
 ];
 

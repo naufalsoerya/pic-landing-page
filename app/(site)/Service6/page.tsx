@@ -43,7 +43,7 @@ const FormContact = () => {
       ...prevState,
       [name]: selectedOptions,
     }));
-  };  
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -98,7 +98,7 @@ const FormContact = () => {
     <div>
       {/* Jumbotron 1*/}
       <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white">
-        <h1 className="ml-12 mt-6 text-5xl font-bold">Konsultasi Masalah</h1>
+        <h1 className="ml-12 mt-6 text-5xl font-bold">Keberatan dan Banding</h1>
         <h2 className="font-lg ml-12 text-2xl">Kepabeanan dan Cukai</h2>
       </div>
       {/* Jumbotron 1*/}
@@ -111,33 +111,36 @@ const FormContact = () => {
               <div>
                 <img
                   className="mb-8 mt-20 h-64 w-full rounded-lg"
-                  src="/images/about/service1.jpg"
+                  src="/images/about/service6.jpg"
                   alt="product image"
                 />
               </div>
               <h1 className="mb-5 text-3xl font-bold text-black">
-                Konsultasi Masalah Kepabeanan dan Cukai
+                Keberatan dan Banding Kepabeanan dan Cukai
               </h1>
               <p className="mb-5 text-justify">
-                Ketentuan regulasi kepabeanan dan cukai yang semakin dinamis
-                seringkali tidak dapat diikuti oleh stakeholder dengan cepat.
-                Sebagai akibatnya, timbul masalah-masalah kepabeanan dan cukai
-                yang berpotensi merugikan baik secara finansiil maupun
-                inefisiensi waktu layanan bagi stake holder. <br />
+                Sengketa kepabeanan dan cukai adalah peristiwa yang sering
+                terjadi dalam kegiatan impor. Importir tidak sependapat dengan
+                penetapan Pejabat Bea dan Cukai. Dalam UU kepabeanan dan Cukai,
+                upaya yang dapat dilakukan Importir atau pengusaha BKC yang
+                menolak penetapan Pejabat Bea dan Cukai dapat menempuh jalur
+                keberatan kepada Dirjend. Bea dan Cukai. Apabila hal ini gagal,
+                maka upaya hukum berikutnya dapat dilakukan dengan pengajuan
+                banding ke Pengadilan Pajak. <br />
               </p>
               <p className="mb-5 text-justify">
-                PIC hadir untuk memberikan advis dan solusi terhadap gap
-                informasi terkait dinamika regulasi kepabeanan dan cukai.{" "}
                 <span className="font-bold">
-                  Konsultasikan masalah Kepabeanan dan Cukai Anda kepada kami
-                  dan temukan solusi terbaik dari para Expert kami.
+                  Perusahan Anda terkena notul SPTNP ataupun SPKTNP dan Anda
+                  tidak puas dengan itu? Tim kami akan membantu Anda melakukan
+                  upaya keberatan kepada DJBC maupun banding ke Pengadilan pajak
+                  .
                 </span>{" "}
                 <br />
               </p>
               <p className="mb-5 text-justify">
                 Kami memaklumi kesibukan dan menghargai waktu Anda yang sangat
                 berharga. Untuk itu, konsultasi yang kami berikan sangat
-                fleksibel mengikuti kesiapan Anda. Media konsultasi dapat
+                fleksibel mengikuti kesiapan Anda . Media konsultasi dapat
                 dipilih sesuai kenyamanan Anda.
               </p>
             </div>
