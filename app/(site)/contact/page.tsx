@@ -1,101 +1,15 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { useState, ChangeEvent, FormEvent } from "react";
-import { motion } from "framer-motion";
-import Swal from "sweetalert2";
+import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import ContactForm from "@/components/FormContact";
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-  media: string;
-  place: string;
-}
+export const metadata: Metadata = {
+  title: "Contact Us - Spesialis training kepabeanan, ekspor, dan impor",
+  description: "PIC Training landing page",
+  // other metadata
+};
 
 const FormContact = () => {
-  const router = useRouter();
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    media: "",
-    place: "",
-  });
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleChangeSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-    const { name, options } = e.target;
-    const selectedOptions = Array.from(options)
-      .filter(option => option.selected)
-      .map(option => option.value);
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: selectedOptions,
-    }));
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:3000/api/service", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-        cache: "no-store",
-      });
-      console.log(response.body, "<<<<<<<<<<<<<<<<");
-      if (response.ok) {
-        // Proses jika pengiriman form berhasil
-        Swal.fire({
-          title: "Do you want to save the changes?",
-          showDenyButton: true,
-          showCancelButton: true,
-          confirmButtonText: "Save",
-          denyButtonText: `Don't save`,
-        }).then((result) => {
-          /* Read more about isConfirmed, isDenied below */
-          if (result.isConfirmed) {
-            Swal.fire("Saved!", "", "success").then(() => {
-              router.push("/");
-            });
-          } else if (result.isDenied) {
-            Swal.fire("Changes are not saved", "", "info").then(() => {
-              router.push("/");
-            });
-          }
-        });
-      } else {
-        // Proses jika pengiriman Form gagal
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Form gagal dikirim",
-        });
-      }
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Error mengirim form",
-      });
-    }
-  };
-
   return (
     <div>
       {/* Jumbotron 1*/}
@@ -125,7 +39,7 @@ const FormContact = () => {
                 alt="logo"
                 width={250}
                 height={10}
-                className="mr-10 mb-5"
+                className="mb-5 mr-10"
               />
               <p className="mb-10 text-justify">
                 <span className="font-bold">
@@ -135,24 +49,7 @@ const FormContact = () => {
                 Sawit, JAKARTA TIMUR 13450
               </p>
               <div>
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top"
-                >
+                <div className="animate_top">
                   <ul className="flex items-center gap-5">
                     <li>
                       <Link
@@ -236,134 +133,21 @@ const FormContact = () => {
                       </Link>
                     </li>
                   </ul>
-                </motion.div>
+                </div>
               </div>
             </div>
 
-            <div className="animate_right hidden lg:block">
-              {/* <!-- ===== Contact Start ===== --> */}
-              <section id="support" className="px-4 md:px-8 2xl:px-0">
-                <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-14">
-                  <div className="gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
-                    <motion.div
-                      variants={{
-                        hidden: {
-                          opacity: 0,
-                          y: -20,
-                        },
-
-                        visible: {
-                          opacity: 1,
-                          y: 0,
-                        },
-                      }}
-                      initial="hidden"
-                      whileInView="visible"
-                      transition={{ duration: 1, delay: 0.1 }}
-                      viewport={{ once: true }}
-                      className="animate_top w-full rounded-xl bg-blue-950 px-14 py-12 shadow-solid-8"
-                    >
-                      <h2 className="mb-15 text-3xl font-bold text-white xl:text-sectiontitle2">
-                        Hubungi Kami
-                      </h2>
-
-                      <form onSubmit={handleSubmit}>
-                        <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
-                          <input
-                            type="text"
-                            name="name"
-                            placeholder="Nama Anda/Perusahaan"
-                            className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                            onChange={handleChange}
-                            value={formData.name}
-                          />
-
-                          <input
-                            type="email"
-                            name="email"
-                            placeholder="Email Anda"
-                            className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                            onChange={handleChange}
-                            value={formData.email}
-                          />
-                        </div>
-
-                        <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
-                          <input
-                            type="text"
-                            name="place"
-                            placeholder="Kota Asal"
-                            className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                            onChange={handleChange}
-                            value={formData.place}
-                          />
-
-                          <input
-                            type="text"
-                            name="phone"
-                            placeholder="Nomor Anda"
-                            className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
-                            onChange={handleChange}
-                            value={formData.phone}
-                          />
-                        </div>
-
-                        <div className="mb-11.5">
-                          <select
-                            name="media"
-                            className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white"
-                            onChange={handleChangeSelect}
-                            value={formData.media}
-                          >
-                            <option disabled value="">Pilihan Layanan</option>
-                            <option value="Training Ahli Kepabeanan">Training Ahli Kepabeanan</option>
-                            <option value="Request Penawaran">Request Penawaran</option>
-                            <option value="Konsultasi Masalah KC">Konsultasi Masalah KC</option>
-                            <option value="Penetapan Klasifikasi Barang">Penetapan Klasifikasi Barang</option>
-                            <option value="Audit KC">Audit KC</option>
-                            <option value="Review Kepatuhan dan Mitigasi Resiko">Review Kepatuhan dan Mitigasi Resiko</option>
-                            <option value="Inhouse Training KC">Inhouse Training KC</option>
-                            <option value="Keberatan dan Banding">Keberatan dan Banding</option>
-                            <option value="Request Penawaran">Request Penawaran</option>
-                          </select>
-                        </div>
-
-                        <div className="mb-11.5 flex">
-                          <textarea
-                            placeholder="Pesan Anda"
-                            rows={5}
-                            name="message"
-                            className="w-full border-b border-stroke bg-transparent focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white"
-                            onChange={handleChange}
-                            value={formData.message}
-                          ></textarea>
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 xl:justify-between ">
-                          <button
-                            aria-label="send message"
-                            className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 font-medium text-black duration-300 ease-in-out hover:bg-slate-300"
-                            type="submit"
-                          >
-                            Send Message
-                          </button>
-                        </div>
-                      </form>
-                    </motion.div>
-                  </div>
-                </div>
-              </section>
-              {/* <!-- ===== Contact End ===== --> */}
-            </div>
+            {/* form */}
+            <ContactForm />
+            {/* form */}
+            
           </div>
         </div>
       </section>
       {/* First Text */}
 
       {/* gmaps */}
-      <div className="relative h-[400px] overflow-hidden bg-[url('/images/about/maps.jpg')] bg-cover bg-no-repeat p-12 text-white">
-        
-      </div>
+      <div className="relative h-[400px] overflow-hidden bg-[url('/images/about/maps.jpg')] bg-cover bg-no-repeat p-12 text-white"></div>
       {/* gmaps */}
     </div>
   );

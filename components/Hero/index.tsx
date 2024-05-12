@@ -40,7 +40,7 @@ const Hero = () => {
                 <p>✅ Ramah dan komunikatif</p>
               </div>
               <div className="mt-8 flex">
-                <Link href={"/Service1"}>
+                <Link href={"/konsultasi-masalah-kepabeanan-cukai"}>
                   <button
                     aria-label="get started button"
                     className="mr-10 flex rounded-full bg-blue-900 px-7.5 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-blackho"
