@@ -27,9 +27,9 @@ const Footer = () => {
                 whileInView="visible"
                 transition={{ duration: 1, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="animate_top w-1/2 lg:w-1/3 ml-14"
+                className="animate_top ml-14 w-1/2 lg:w-1/3"
               >
-                <a href="index.html" className="relative">
+                <Link href="index.html" className="relative">
                   <Image
                     width={200}
                     height={100}
@@ -37,31 +37,32 @@ const Footer = () => {
                     alt="Logo"
                     className="dark:hidden"
                   />
-                  <Image
-                    width={110}
-                    height={80}
-                    src="/images/logo/logo-dark.svg"
-                    alt="Logo"
-                    className="hidden dark:block"
-                  />
-                </a>
+                </Link>
 
-                <p className="mb-10 mt-5">
+                <p className="mb-8 mt-5 text-justify">
                   Platform belajar dan konsultasi spesialis kepabeanan dan cukai
                   milik PT Pro Insani Cendekia
                 </p>
 
-                <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
-                  Lokasi Kami
-                </p>
-                <a href="#" className="text-sm">
-                  Komplek Rukan Taman (Ruko Medical) Pondok Kelapa Jl. Pondok
-                  Kelapa Raya, Blok B No.9 Pondok Kelapa, Duren Sawit, JAKARTA
-                  TIMUR 13450
-                </a>
+                <div className="flex items-center justify-between">
+                  <Image
+                    width={60}
+                    height={60}
+                    src="/images/logo/logo-home.png"
+                    alt="Logo"
+                    className="mr-5"
+                  />
+                  <p className="mb-1.5 text-justify text-sectiontitle">
+                    <span className="font-bold">LOKASI KAMI</span>
+                    <br />
+                    Komplek Rukan Taman (Ruko Medical) Pondok Kelapa. Jl.
+                    Pondok Kelapa Raya, Blok D/6 Pondok Kelapa, Duren Sawit,
+                    JAKARTA TIMUR 13450
+                  </p>
+                </div>
               </motion.div>
 
-              <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/4 mr-14">
+              <div className="mr-14 flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/4">
                 <motion.div
                   variants={{
                     hidden: {
@@ -80,17 +81,25 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="mb-5 text-itemtitle2 font-bold">
+                  <h4 className="mb-5 mt-4 text-itemtitle2 font-bold">
                     LAYANAN KAMI
                   </h4>
 
                   <ul>
-                    <li className="mb-2">Konsultasi Masalah Kepabeanan dan Cukai</li>
-                    <li className="mb-2">Penetapan Klasifikasi Barang</li>
-                    <li className="mb-2">Audit Kepabeanan dan Cukai</li>
-                    <li className="mb-2">Review Kepatuhan dan Mitigasi Risiko</li>
-                    <li className="mb-2">Inhouse Training Kepabeanan dan Cukai</li>
-                    <li className="mb-2">Keberatan dan Banding Kepabeanan dan Cukai</li>
+                    <li className="mb-2">
+                      ⚪ Konsultasi Masalah Kepabeanan dan Cukai
+                    </li>
+                    <li className="mb-2">⚪ Penetapan Klasifikasi Barang</li>
+                    <li className="mb-2">⚪ Audit Kepabeanan dan Cukai</li>
+                    <li className="mb-2">
+                      ⚪ Review Kepatuhan dan Mitigasi Risiko
+                    </li>
+                    <li className="mb-2">
+                      ⚪ Inhouse Training Kepabeanan dan Cukai
+                    </li>
+                    <li className="mb-2">
+                      ⚪ Keberatan dan Banding Kepabeanan dan Cukai
+                    </li>
                   </ul>
                 </motion.div>
 
@@ -112,16 +121,79 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="mb-5 text-itemtitle2 font-bold">
+                  <h4 className="mb-5 mt-4 text-itemtitle2 font-bold">
                     HUBUNGI KAMI
                   </h4>
 
-                  <ul>
-                    <li className="mb-2">0812 8484 1223 (Training)</li>
-                    <li className="mb-2">0818 0612 1812 (Consulting)</li>
-                    <li className="mb-2">info@pictraining.co.id</li>
-                    <li className="mb-2">info@pictraining.id</li>
-                  </ul>
+                  <div className="mb-2 flex items-center justify-between">
+                    <Image
+                      width={40}
+                      height={50}
+                      src="/images/logo/logo-phone.png"
+                      alt="Logo"
+                      className="mr-5"
+                    />
+                    <p className="mb-1.5 text-sectiontitle">
+                      0812 8484 1223 (Training)
+                      <br />
+                      0818 0612 1812 (Consulting)
+                    </p>
+                  </div>
+
+                  <div className="mb-6 flex items-center justify-between">
+                    <Image
+                      width={40}
+                      height={50}
+                      src="/images/logo/logo-email.png"
+                      alt="Logo"
+                      className="mr-5"
+                    />
+                    <p className="mb-1.5 text-sectiontitle">
+                      info@pictraining.co.id{" "}
+                      <span className="text-slate-500 ">ddddd</span>
+                      <br />
+                      info@pictraining.id
+                    </p>
+                  </div>
+
+                  <div className="flex">
+                    <Link
+                      href="http://facebook.com/kelaskepabeanan"
+                      aria-label="social icon"
+                    >
+                      <Image
+                        width={60}
+                        height={50}
+                        src="/images/logo/logo-facebook.png"
+                        alt="Logo"
+                        className="ml-12 mr-4"
+                      />
+                    </Link>
+                    <Link
+                      href="http://instagram.com/trainingkepabeanan"
+                      aria-label="social icon"
+                    >
+                      <Image
+                        width={35}
+                        height={50}
+                        src="/images/logo/logo-instagram.png"
+                        alt="Logo"
+                        className="mr-8"
+                      />
+                    </Link>
+                    <Link
+                      href="https://www.youtube.com/@trainingkepabeanan9506"
+                      aria-label="social icon"
+                    >
+                      <Image
+                        width={50}
+                        height={60}
+                        src="/images/logo/logo-youtube.png"
+                        alt="Logo"
+                        className=""
+                      />
+                    </Link>
+                  </div>
                 </motion.div>
               </div>
             </div>
@@ -194,9 +266,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="animate_top"
             >
-              <p>
-                &copy; {new Date().getFullYear()} Solid. All rights reserved
-              </p>
+              <p>&copy; {new Date().getFullYear()} PIC. All rights reserved</p>
             </motion.div>
 
             <motion.div

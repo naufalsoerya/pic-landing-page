@@ -11,7 +11,7 @@ const FormContact = () => {
   return (
     <div>
       {/* Jumbotron 1*/}
-      <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white">
+      <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-28">
         <h1 className="ml-12 mt-6 text-5xl font-bold">Review Kepatuhan</h1>
         <h2 className="font-lg ml-12 text-2xl">dan Mitigasi Risiko</h2>
       </div>

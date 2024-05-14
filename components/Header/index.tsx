@@ -29,19 +29,19 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-99999 w-full py-5 ${
         stickyMenu
-          ? "bg-gray-400 text-gray-700 !py-4 shadow transition duration-100"
+          ? "bg-gray-300 text-gray-700 !py-4 shadow transition duration-100"
           : ""
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
-        <div className="flex w-full items-center justify-between xl:w-1/4 ml-10">
+      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-10">
+        <div className="flex w-full items-center justify-between xl:w-1/5">
           <a href="/">
             <Image
               src="/images/logo/logo-light.svg"
               alt="logo"
               width={119.03}
               height={30}
-              className="w-full dark:hidden"
+              className="w-full"
             />
           </a>
 

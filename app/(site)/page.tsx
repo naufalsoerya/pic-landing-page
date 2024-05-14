@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Jumbotron from "@/components/Jumbotron";
 import Feature from "@/components/Features";
-import Header from "@/components/Header";
 import Jumbotron2 from "@/components/Jumbotron2";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <Header />
       <Jumbotron />
       <Hero />
       <Feature />

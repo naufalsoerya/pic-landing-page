@@ -9,15 +9,15 @@ export async function POST(req: Request, res: NextApiResponse) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "naufalsurya.official@gmail.com",
-      pass: "jpwm anwy cpla isiz",
+      user: "daftarpic@gmail.com",
+      pass: "cyhl bdbn xpkc twom",
     },
     secure: false,
   });
 
-  const { name, email, phone, message, media, place } = body;
+  const { name, email, phone, message, media, place, company } = body;
 
-  if (!message || !name || !name || !email || !phone || !media || !place) {
+  if (!message || !name || !name || !email || !phone || !media || !place || !company) {
     return res
       .status(400)
       .json({ message: "Please fill out the necessary fields" });
@@ -26,9 +26,15 @@ export async function POST(req: Request, res: NextApiResponse) {
   // Konfigurasi email yang akan dikirim
   const mailOptions = {
     from: email,
-    to: "naufalsurya.official@gmail.com",
+    to: "daftarpic@gmail.com",
     subject: "New message from " + name,
-    html: `<p>Nama Individu / Perusahaan: ${name} (${email}) | Nomor Telephone: ${phone} | Media Konsultasi: ${media} | Kota Asal: ${place}</p><br/><p>${message}</p>`,
+    html: `<p><b>Nama Individu:</b> ${name}</p> <br/>
+    <p><b>Nama Perusahaan:</b> ${company}</p> <br/>
+    <p><b>Email:</b> ${email}</p> <br/>
+    <p><b>Phone:</b> ${phone}</p> <br/>
+    <p><b>Media Konsultasi:</b> ${media}</p> <br/>
+    <p><b>Kota Asal:</b> ${place}</p> <br/>
+    <p>${message}</p>`,
   };
 
   await new Promise((resolve, reject) => {

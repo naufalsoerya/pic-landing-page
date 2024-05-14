@@ -20,8 +20,8 @@ const Hero = () => {
               <p className="text-justify">
                 Berbekal pengalaman kami sebagai provider training kepabeanan
                 terpercaya sejak tahun 2015 dan didukung oleh expert Kepabeanan
-                dan Cukai terbaik dari berbagai kalangan: praktisi, dosen dan
-                widyaiswara Kepabeananan serta mantan pejabat DJBC kami
+                dan Cukai terbaik dari berbagai kalangan: praktisi, dosen dan eks
+                widyaiswara Kepabeananan serta eks pejabat DJBC, kami
                 berkomitmen untuk memberikan solusi terbaik atas permasalahan
                 kepabeanan dan cukai pada Perusahaan Anda. Kepuasan layanan dan
                 Kepercayaan Anda adalah prioritas utama kami. Berikut komitmen
@@ -48,7 +48,7 @@ const Hero = () => {
                     FORM KONSULTASI
                   </button>
                 </Link>
-                <Link href={"https://wa.me/6281806121812"}>
+                <Link href={"https://wa.me/6281806121812"} target="blank">
                   <button
                     aria-label="get started button"
                     className="flex rounded-full bg-green-600 px-7.5 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-green-900"

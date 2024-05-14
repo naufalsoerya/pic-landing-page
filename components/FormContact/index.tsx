@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 interface FormData {
   name: string;
+  company: string;
   email: string;
   phone: string;
   message: string;
@@ -16,6 +17,7 @@ const ContactForm = () => {
   const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    company: "",
     email: "",
     phone: "",
     message: "",
@@ -55,7 +57,6 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
         cache: "no-store",
       });
-      console.log(response.body, "<<<<<<<<<<<<<<<<");
       if (response.ok) {
         // Proses jika pengiriman form berhasil
         Swal.fire({
@@ -72,7 +73,7 @@ const ContactForm = () => {
             });
           } else if (result.isDenied) {
             Swal.fire("Changes are not saved", "", "info").then(() => {
-              router.push("/");
+              router.push("/contact");
             });
           }
         });
@@ -99,7 +100,7 @@ const ContactForm = () => {
         {/* <!-- ===== Contact Start ===== --> */}
         <section id="support" className="px-4 md:px-8 2xl:px-0">
           <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-14">
-            <div className="gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
+            <div className="gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-10">
               <div
                 
                 className="animate_top w-full rounded-xl bg-blue-950 px-14 py-12 shadow-solid-8"
@@ -109,50 +110,58 @@ const ContactForm = () => {
                 </h2>
 
                 <form onSubmit={handleSubmit}>
-                  <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
+                  <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
                     <input
                       type="text"
                       name="name"
-                      placeholder="Nama Anda/Perusahaan"
-                      className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                      placeholder="Nama Anda"
+                      className="bg-white-200 rounded-lg lg:w-1/2 px-6 py-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none pl-2"
                       onChange={handleChange}
                       value={formData.name}
                     />
 
                     <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Anda"
-                      className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                      type="text"
+                      name="company"
+                      placeholder="Nama Perusahaan"
+                      className="bg-white-200 rounded-lg lg:w-1/2 px-6 py-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none pl-2"
                       onChange={handleChange}
-                      value={formData.email}
+                      value={formData.company}
                     />
                   </div>
 
-                  <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
+                  <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="bg-white-200 rounded-lg lg:w-1/2 px-6 py-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none pl-2"
+                      onChange={handleChange}
+                      value={formData.email}
+                    />
+
                     <input
                       type="text"
                       name="place"
                       placeholder="Kota Asal"
-                      className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                      className="bg-white-200 rounded-lg lg:w-1/2 px-6 py-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none pl-2"
                       onChange={handleChange}
                       value={formData.place}
                     />
+                  </div>
 
+                  <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
                     <input
                       type="text"
                       name="phone"
-                      placeholder="Nomor Anda"
-                      className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                      placeholder="Nomor Telepon"
+                      className="bg-white-200 rounded-lg lg:w-1/2 px-6 py-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none pl-2"
                       onChange={handleChange}
                       value={formData.phone}
                     />
-                  </div>
-
-                  <div className="mb-11.5">
                     <select
                       name="media"
-                      className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white"
+                      className="bg-white-200 rounded-lg lg:w-1/2 px-6 py-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none pl-2"
                       onChange={handleChangeSelect}
                       value={formData.media}
                     >
@@ -189,10 +198,10 @@ const ContactForm = () => {
 
                   <div className="mb-11.5 flex">
                     <textarea
-                      placeholder="Pesan Anda"
+                      placeholder="Pesan"
                       rows={5}
                       name="message"
-                      className="w-full border-b border-stroke bg-transparent focus:border-waterloo focus:placeholder:text-white focus-visible:outline-none dark:focus:border-manatee dark:focus:placeholder:text-white"
+                      className="w-full bg-white-200 rounded-lg px-6 py-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none pl-2"
                       onChange={handleChange}
                       value={formData.message}
                     ></textarea>
@@ -201,7 +210,7 @@ const ContactForm = () => {
                   <div className="flex flex-wrap gap-4 xl:justify-between ">
                     <button
                       aria-label="send message"
-                      className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 font-medium text-black duration-300 ease-in-out hover:bg-slate-300"
+                      className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 font-medium text-black duration-300 ease-in-out hover:bg-blue-900 hover:text-white"
                       type="submit"
                     >
                       Send Message

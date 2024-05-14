@@ -12,7 +12,7 @@ const aboutPage = () => {
   return (
     <>
       {/* Jumbotron 1*/}
-      <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white">
+      <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-28">
         <h1 className="ml-10 mt-6 text-5xl font-bold">Tentang PIC</h1>
         <h2 className="font-lg ml-12 text-2xl">Training and Consulting</h2>
       </div>
@@ -132,14 +132,12 @@ const aboutPage = () => {
       <section className="overflow-hidden pb-20 xl:pb-16">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="animate_right hidden md:w-1/2 lg:block">
-              <div className="h-64max-w-sm mt-5 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+            <div className="animate_right hidden md:w-1/2 lg:block ml-10">
                 <img
-                  className="rounded-t-lg p-8"
+                  className="rounded-t-lg border border-2 pt-5 border-gray-200 bg-white shadow"
                   src="/images/about/banner(3).jpg"
                   alt="product image"
                 />
-              </div>
             </div>
 
             <div className="ml-8 md:w-1/2">

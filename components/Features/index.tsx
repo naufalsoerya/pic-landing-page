@@ -3,6 +3,7 @@ import React from "react";
 import featuresData from "./featuresData";
 import SingleFeature from "./SingleFeature";
 import SectionHeader from "../Common/SectionHeader";
+import Marquee from "react-fast-marquee";
 
 const Feature = () => {
   return (
@@ -19,7 +20,7 @@ const Feature = () => {
           />
           {/* <!-- Section Title End --> */}
 
-          <div className="mt-12.5 grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:mt-15 lg:grid-cols-3 xl:mt-8 xl:gap-12.5">
+          <div className="mt-12.5 grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:mt-15 lg:grid-cols-3 xl:mt-8 xl:gap-12.5 mb-10">
             {/* <!-- Features item Start --> */}
 
             {featuresData.map((feature, key) => (
@@ -27,6 +28,9 @@ const Feature = () => {
             ))}
             {/* <!-- Features item End --> */}
           </div>
+          <Marquee className="text-red-500 font-bold">
+            Tarif layanan jasa yang kami tawarkan dapat dinegosiasikan... dijamin lebih hemat dan terjangkau !!
+          </Marquee>
         </div>
       </section>
 

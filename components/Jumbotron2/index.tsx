@@ -18,7 +18,7 @@ const Jumbotron2 = () => {
                 <Link href={"/contact"}>
                   <button
                     aria-label="get started button"
-                    className="mr-10 flex rounded-full bg-gray-400 px-10.5 py-3.5 font-bold text-blue-950 duration-300 ease-in-out hover:bg-gray-600"
+                    className="mr-10 flex rounded-full bg-slate-200 px-10.5 py-3.5 font-bold text-blue-950 duration-300 ease-in-out hover:bg-blue-900 hover:text-white"
                   >
                     Click Here
                   </button>
@@ -28,14 +28,14 @@ const Jumbotron2 = () => {
           </div>
 
           <div className="animate_top font-lg mr-14 mt-5 flex-1">
-            <h4 className="mb-7 ml-5 text-4xl font-bold">Hubungi Kami</h4>
+            <h4 className="mb-5 ml-4 text-4xl font-bold">Hubungi Kami</h4>
 
             <ul>
               <li className="mb-4 text-justify">
-                <Link href={"https://wa.me/6281806121812"}>
+                <Link href={"https://wa.me/6281806121812"} target="blank">
                   <button
                     aria-label="get started button"
-                    className="flex rounded-full bg-green-600 px-11.5 py-3.5 text-2xl font-bold text-white duration-300 ease-in-out hover:bg-green-900"
+                    className="flex rounded-full bg-green-600 px-11.5 py-3.5 text-2xl font-bold text-white duration-300 ease-in-out hover:bg-slate-200 hover:text-green-600"
                   >
                     0812 9808 2677
                   </button>
@@ -49,18 +49,26 @@ const Jumbotron2 = () => {
 
       {/* Jumbotron 2 */}
       <div className="flex">
-        <div className="relative h-[440px] flex-1 overflow-hidden bg-slate-500 p-12 text-white">
+        <div className="relative h-[440px] flex-1 overflow-hidden bg-[url('/images/about/banner(4).jpg')] bg-cover bg-no-repeat p-12 text-white">
           <div className="flex w-full flex-col md:flex-row md:justify-between">
             <div className="animate_top ml-12 mt-10 flex-1">
-              <h4 className="mb-5 text-4xl font-bold">Atau ...</h4>
-              <p className="mb-6 mr-10 text-2xl">
+            <button
+                aria-label="get started button"
+                className="pointer-events-none text-2xl ml-52 mb-5 mt-4 flex rounded-2xl bg-blue-400 px-10 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-blackho"
+              >
+                Atau ...
+              </button>
+              <button
+                aria-label="get started button"
+                className="pointer-events-none mb-6 mr-10 text-lg mt-4 flex rounded-2xl bg-slate-200 px-4 py-3.5 font-bold text-black duration-300 ease-in-out"
+              >
                 mungkin Anda membutuhkan Tempat Trainining Kepabeanan terbaik
-                yang terbukti paling banyak Kelulusan Ujian SAK nya ?{" "}
-              </p>
-              <Link href={"https://pictraining.co.id/"}>
+                yang terbukti paling banyak Kelulusan Ujian SAK nya ?
+              </button>
+              <Link href={"https://pictraining.co.id/"} target="blank">
                 <button
                   aria-label="get started button"
-                  className="flex rounded-full bg-blue-900 px-14.5 py-3 text-2xl font-bold text-white duration-300 ease-in-out hover:bg-blue-950"
+                  className="flex rounded-full bg-slate-200 px-12.5 py-3 text-1xl font-bold text-black duration-300 ease-in-out hover:bg-yellow-400 hover:text-white ml-50"
                 >
                   Click Here
                 </button>
