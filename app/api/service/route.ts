@@ -1,6 +1,7 @@
 import { NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+require('dotenv').config();
 
 export async function POST(req: Request, res: NextApiResponse) {
   const body = await req.json();
@@ -10,7 +11,7 @@ export async function POST(req: Request, res: NextApiResponse) {
     service: "gmail",
     auth: {
       user: "daftarpic@gmail.com",
-      pass: "cyhl bdbn xpkc twom",
+      pass: process.env.PASS,
     },
     secure: false,
   });

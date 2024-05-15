@@ -49,7 +49,7 @@ const ContactForm = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/service", {
+      const response = await fetch("https://pictraining.vercel.app/api/service", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,24 +59,8 @@ const ContactForm = () => {
       });
       if (response.ok) {
         // Proses jika pengiriman form berhasil
-        Swal.fire({
-          title: "Do you want to save the changes?",
-          showDenyButton: true,
-          showCancelButton: true,
-          confirmButtonText: "Save",
-          denyButtonText: `Don't save`,
-        }).then((result) => {
-          /* Read more about isConfirmed, isDenied below */
-          if (result.isConfirmed) {
-            Swal.fire("Saved!", "", "success").then(() => {
-              router.push("/");
-            });
-          } else if (result.isDenied) {
-            Swal.fire("Changes are not saved", "", "info").then(() => {
-              router.push("/contact");
-            });
-          }
-        });
+        Swal.fire("Form berhasil dikirim!");
+        router.push("/")
       } else {
         // Proses jika pengiriman Form gagal
         Swal.fire({
