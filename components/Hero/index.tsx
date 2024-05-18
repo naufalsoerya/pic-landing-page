@@ -7,7 +7,7 @@ const Hero = () => {
       <section className="overflow-hidden pb-20 pt-22 md:pt-40 xl:pb-16 xl:pt-20">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="md:w-1/2 ml-8">
+            <div className="ml-4 md:ml-0 md:w-1/2">
               <h1 className="mb-5 text-4xl font-bold text-black">
                 Apapun Masalah Kepabeanan dan Cukai Anda
               </h1>
@@ -20,8 +20,8 @@ const Hero = () => {
               <p className="text-justify">
                 Berbekal pengalaman kami sebagai provider training kepabeanan
                 terpercaya sejak tahun 2015 dan didukung oleh expert Kepabeanan
-                dan Cukai terbaik dari berbagai kalangan: praktisi, dosen dan eks
-                widyaiswara Kepabeananan serta eks pejabat DJBC, kami
+                dan Cukai terbaik dari berbagai kalangan: praktisi, dosen dan
+                eks widyaiswara Kepabeananan serta eks pejabat DJBC, kami
                 berkomitmen untuk memberikan solusi terbaik atas permasalahan
                 kepabeanan dan cukai pada Perusahaan Anda. Kepuasan layanan dan
                 Kepercayaan Anda adalah prioritas utama kami. Berikut komitmen
@@ -39,19 +39,19 @@ const Hero = () => {
                 <p className="mr-4">✅ Fleksibilitas waktu dan media</p>
                 <p>✅ Ramah dan komunikatif</p>
               </div>
-              <div className="mt-8 flex">
-                <Link href={"/konsultasi-masalah-kepabeanan-cukai"}>
+              <div className="mt-8 flex flex-col sm:flex-row sm:items-center">
+                <Link href="/konsultasi-masalah-kepabeanan-cukai">
                   <button
                     aria-label="get started button"
-                    className="mr-10 flex rounded-full bg-blue-900 px-7.5 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-blackho"
+                    className="mb-4 flex rounded-full bg-blue-900 px-7 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-black sm:mb-0 sm:mr-4"
                   >
                     FORM KONSULTASI
                   </button>
                 </Link>
-                <Link href={"https://wa.me/6281806121812"} target="blank">
+                <Link href="https://wa.me/6281806121812" target="_blank">
                   <button
-                    aria-label="get started button"
-                    className="flex rounded-full bg-green-600 px-7.5 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-green-900"
+                    aria-label="contact via WhatsApp button"
+                    className="flex rounded-full bg-green-600 px-7 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-green-900"
                   >
                     0812 9808 2677
                   </button>
@@ -60,19 +60,19 @@ const Hero = () => {
             </div>
 
             <div className="animate_right hidden md:w-1/2 lg:block">
-              <div className="w-full h-64max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800 mt-5">
-                  <img
-                    className="rounded-t-lg p-8"
-                    src="/images/about/banner(1).jpg"
-                    alt="product image"
-                  />
+              <div className="h-64max-w-sm mt-5 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+                <img
+                  className="rounded-t-lg p-8"
+                  src="/images/about/banner(1).jpg"
+                  alt="product image"
+                />
                 <div className="px-5 pb-5">
                   <a href="#">
-                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white ml-3">
+                    <h5 className="ml-3 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                       Dipercaya dari berbagai perusahaan terkemuka !
                     </h5>
                   </a>
-                  <div className="mb-5 mt-2.5 flex items-center ml-3">
+                  <div className="mb-5 ml-3 mt-2.5 flex items-center">
                     <div className="flex items-center space-x-1 rtl:space-x-reverse">
                       <svg
                         className="h-4 w-4 text-yellow-300"

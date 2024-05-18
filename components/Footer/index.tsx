@@ -9,7 +9,7 @@ const Footer = () => {
       <footer className="border-t border-stroke bg-slate-500 text-white">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           {/* <!-- Footer Top --> */}
-          <div className="py-20 lg:py-14">
+          <div className="md:py-20 py-12 lg:py-14">
             <div className="flex flex-wrap gap-8 lg:justify-between lg:gap-0">
               <motion.div
                 variants={{
@@ -17,7 +17,6 @@ const Footer = () => {
                     opacity: 0,
                     y: -20,
                   },
-
                   visible: {
                     opacity: 1,
                     y: 0,
@@ -27,7 +26,7 @@ const Footer = () => {
                 whileInView="visible"
                 transition={{ duration: 1, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="animate_top ml-14 w-1/2 lg:w-1/3"
+                className="animate_top w-full px-4 md:w-1/2 md:px-0 lg:w-1/3 md:ml-14"
               >
                 <Link href="index.html" className="relative">
                   <Image
@@ -35,16 +34,14 @@ const Footer = () => {
                     height={100}
                     src="/images/logo/logo-light.svg"
                     alt="Logo"
-                    className="dark:hidden"
+                    className="md:ml-0 ml-16"
                   />
                 </Link>
-
                 <p className="mb-8 mt-5 text-justify">
                   Platform belajar dan konsultasi spesialis kepabeanan dan cukai
                   milik PT Pro Insani Cendekia
                 </p>
-
-                <div className="flex items-center justify-between">
+                <div className="flex items-center">
                   <Image
                     width={60}
                     height={60}
@@ -55,9 +52,9 @@ const Footer = () => {
                   <p className="mb-1.5 text-justify text-sectiontitle">
                     <span className="font-bold">LOKASI KAMI</span>
                     <br />
-                    Komplek Rukan Taman (Ruko Medical) Pondok Kelapa. Jl.
-                    Pondok Kelapa Raya, Blok D/6 Pondok Kelapa, Duren Sawit,
-                    JAKARTA TIMUR 13450
+                    Komplek Rukan Taman (Ruko Medical) Pondok Kelapa. Jl. Pondok
+                    Kelapa Raya, Blok D/6 Pondok Kelapa, Duren Sawit, JAKARTA
+                    TIMUR 13450
                   </p>
                 </div>
               </motion.div>
@@ -81,11 +78,11 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="mb-5 mt-4 text-itemtitle2 font-bold">
+                  <h4 className="md:ml-0 ml-13 mb-5 mt-4 text-itemtitle2 font-bold text-center md:text-left">
                     LAYANAN KAMI
                   </h4>
 
-                  <ul>
+                  <ul className="md:ml-0 ml-5">
                     <li className="mb-2">
                       ⚪ Konsultasi Masalah Kepabeanan dan Cukai
                     </li>
@@ -121,39 +118,40 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="mb-5 mt-4 text-itemtitle2 font-bold">
-                    HUBUNGI KAMI
-                  </h4>
+                  <div>
+                    <h4 className="md:ml-0 ml-13 mb-5 mt-4 text-center text-itemtitle2 font-bold md:text-left">
+                      HUBUNGI KAMI
+                    </h4>
 
-                  <div className="mb-2 flex items-center justify-between">
-                    <Image
-                      width={40}
-                      height={50}
-                      src="/images/logo/logo-phone.png"
-                      alt="Logo"
-                      className="mr-5"
-                    />
-                    <p className="mb-1.5 text-sectiontitle">
-                      0812 8484 1223 (Training)
-                      <br />
-                      0818 0612 1812 (Consulting)
-                    </p>
-                  </div>
+                    <div className="mb-2 flex flex-col items-center justify-between md:flex-row">
+                      <Image
+                        width={40}
+                        height={50}
+                        src="/images/logo/logo-phone.png"
+                        alt="Logo"
+                        className="md:ml-0 ml-13 mb-3 mr-0 md:mb-0 md:mr-5"
+                      />
+                      <p className="md:ml-0 ml-13 mb-1.5 text-center md:text-sectiontitle text-lg md:text-left">
+                        0812 8484 1223 (Training)
+                        <br />
+                        0818 0612 1812 (Consulting)
+                      </p>
+                    </div>
 
-                  <div className="mb-6 flex items-center justify-between">
-                    <Image
-                      width={40}
-                      height={50}
-                      src="/images/logo/logo-email.png"
-                      alt="Logo"
-                      className="mr-5"
-                    />
-                    <p className="mb-1.5 text-sectiontitle">
-                      info@pictraining.co.id{" "}
-                      <span className="text-slate-500 ">ddddd</span>
-                      <br />
-                      info@pictraining.id
-                    </p>
+                    <div className="mb-6 flex flex-col items-center md:flex-row">
+                      <Image
+                        width={40}
+                        height={50}
+                        src="/images/logo/logo-email.png"
+                        alt="Logo"
+                        className="md:ml-0 ml-13 mb-3 mr-0 md:mb-0 md:mr-5"
+                      />
+                      <p className="md:ml-0 ml-13 mb-1.5 md:text-sectiontitle text-lg md:text-left">
+                        info@pictraining.co.id
+                        <br />
+                        info@picconsulting.id 
+                      </p>
+                    </div>
                   </div>
 
                   <div className="flex">
@@ -166,7 +164,7 @@ const Footer = () => {
                         height={50}
                         src="/images/logo/logo-facebook.png"
                         alt="Logo"
-                        className="ml-12 mr-4"
+                        className="mr-4 md:ml-0 ml-18"
                       />
                     </Link>
                     <Link

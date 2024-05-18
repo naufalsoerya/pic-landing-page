@@ -80,16 +80,13 @@ const ContactForm = () => {
 
   return (
     <div>
-      <div className="animate_right hidden lg:block">
+      <div className="animate_right">
         {/* <!-- ===== Contact Start ===== --> */}
-        <section id="support" className="px-4 md:px-8 2xl:px-0">
-          <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-14">
+        <section id="support" className="md:px-4 px-0 2xl:px-0">
+          <div className="relative mx-auto max-w-c-1390 md:px-7.5 pb-12 md:pt-10 pt-6 lg:px-15 lg:pt-15 xl:px-20 xl:pt-14">
             <div className="gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-10">
-              <div
-                
-                className="animate_top w-full rounded-xl bg-blue-950 px-14 py-12 shadow-solid-8"
-              >
-                <h2 className="mb-15 text-3xl font-bold text-white xl:text-sectiontitle2">
+              <div className="animate_top w-full rounded-xl bg-blue-950 px-14 py-12 shadow-solid-8">
+              <h2 className="md:mb-15 mb-8 text-3xl font-bold text-white xl:text-sectiontitle2">
                   Hubungi Kami
                 </h2>
 

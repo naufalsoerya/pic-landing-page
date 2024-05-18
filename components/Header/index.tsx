@@ -29,7 +29,7 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-99999 w-full py-5 ${
         stickyMenu
-          ? "bg-gray-300 text-gray-700 !py-4 shadow transition duration-100"
+          ? "bg-gray-300 !py-4 text-gray-700 shadow transition duration-100"
           : ""
       }`}
     >
@@ -39,9 +39,9 @@ const Header = () => {
             <Image
               src="/images/logo/logo-light.svg"
               alt="logo"
-              width={119.03}
-              height={30}
-              className="w-full"
+              width={80}
+              height={10}
+              className="w-36 md:w-80" // Tambahkan ukuran kelas w-32 untuk layar hp dan w-80 untuk layar yang lebih besar (md: untuk ukuran layar desktop)
             />
           </a>
 
@@ -90,11 +90,11 @@ const Header = () => {
         <div
           className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
             navigationOpen &&
-            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
+            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row font-bold xl:items-center xl:gap-12 ml-52">
+            <ul className="flex flex-col gap-5 font-bold md:ml-52 xl:flex-row xl:items-center xl:gap-12">
               {menuData.map((menuItem, key) => (
                 <li key={key} className={menuItem.submenu && "group relative"}>
                   {menuItem.submenu ? (
@@ -120,7 +120,9 @@ const Header = () => {
                       >
                         {menuItem.submenu.map((item, key) => (
                           <li key={key} className="hover:text-primary">
-                            <Link href={item.path || "/"} target="blank">{item.title}</Link>
+                            <Link href={item.path || "/"} target="blank">
+                              {item.title}
+                            </Link>
                           </li>
                         ))}
                       </ul>

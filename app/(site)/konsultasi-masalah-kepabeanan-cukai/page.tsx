@@ -11,20 +11,20 @@ const FormContact = () => {
   return (
     <div>
       {/* Jumbotron 1*/}
-      <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-28">
-        <h1 className="ml-12 mt-6 text-5xl font-bold">Konsultasi Masalah</h1>
-        <h2 className="font-lg ml-12 text-2xl">Kepabeanan dan Cukai</h2>
+      <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-22 md:mt-28">
+        <h1 className="md:ml-12 md:mt-6 mt-5 md:text-5xl text-3xl font-bold">Konsultasi Masalah</h1>
+        <h2 className="font-lg md:ml-12 text-lg">Kepabeanan dan Cukai</h2>
       </div>
       {/* Jumbotron 1*/}
 
       {/* First Text */}
       <section className="pb-26 overflow-hidden md:pt-40 xl:pb-16 xl:pt-1">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="ml-8 md:w-1/2">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8 xl:gap-32.5">
+            <div className="ml-8 md:w-1/2 md:mr-0 mr-7">
               <div>
                 <img
-                  className="mb-8 mt-20 h-64 w-full rounded-lg"
+                  className="mb-8 mt-20 h-38 md:h-64 w-full rounded-lg"
                   src="/images/about/service1.jpg"
                   alt="product image"
                 />
