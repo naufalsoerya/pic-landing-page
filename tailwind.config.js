@@ -15,6 +15,9 @@ module.exports = {
       inter: ["Inter", "sans-serif"],
     },
     extend: {
+      screens: {
+        'lg': '1125px',  
+      },
       colors: {
         current: "currentColor",
         transparent: "transparent",

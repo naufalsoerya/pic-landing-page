@@ -33,22 +33,26 @@ const Header = () => {
           : ""
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-10">
-        <div className="flex w-full items-center justify-between xl:w-1/5">
+      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 lg:flex 2xl:px-10">
+        {/* Ubah 'xl:flex' menjadi 'lg:flex' */}
+
+        <div className="flex w-full items-center justify-between lg:w-1/5">
+          {/* Ubah 'xl:w-1/5' menjadi 'lg:w-1/5' */}
+
           <a href="/">
             <Image
               src="/images/logo/logo-light.svg"
               alt="logo"
               width={80}
               height={10}
-              className="w-36 md:w-80" 
+              className="w-36 md:w-80"
             />
           </a>
 
           {/* <!-- Hamburger Toggle BTN --> */}
           <button
             aria-label="hamburger Toggler"
-            className="block xl:hidden"
+            className="block lg:hidden"
             onClick={() => setNavigationOpen(!navigationOpen)}
           >
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
@@ -86,15 +90,17 @@ const Header = () => {
           {/* <!-- Hamburger Toggle BTN --> */}
         </div>
 
-        {/* Nav Menu Start   */}
+        {/* Nav Menu Start */}
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
+          className={`invisible h-0 w-full items-center justify-between lg:visible lg:flex lg:h-auto lg:w-full ${
             navigationOpen &&
-            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
+            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md p-7.5 shadow-solid-5 dark:bg-blacksection lg:h-auto lg:p-0 lg:shadow-none lg:dark:bg-transparent"
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 font-bold md:ml-52 xl:flex-row xl:items-center xl:gap-12">
+            <ul className="flex flex-col gap-5 font-bold md:ml-52 lg:flex-row lg:items-center lg:gap-12">
+              {/* Ubah 'xl:flex-row xl:items-center xl:gap-12' menjadi 'lg:flex-row lg:items-center lg:gap-12' */}
+
               {menuData.map((menuItem, key) => (
                 <li key={key} className={menuItem.submenu && "group relative"}>
                   {menuItem.submenu ? (
@@ -119,7 +125,10 @@ const Header = () => {
                         className={`dropdown ${dropdownToggler ? "flex" : ""}`}
                       >
                         {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="hover:text-primary md:w-full w-64">
+                          <li
+                            key={key}
+                            className="w-64 hover:text-primary md:w-full"
+                          >
                             <Link href={item.path || "/"} target="blank">
                               {item.title}
                             </Link>
