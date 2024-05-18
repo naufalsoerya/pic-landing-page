@@ -34,7 +34,7 @@ const Footer = () => {
                     height={100}
                     src="/images/logo/logo-light.svg"
                     alt="Logo"
-                    className="md:ml-0 ml-16"
+                    className=""
                   />
                 </Link>
                 <p className="mb-8 mt-5 text-justify">
@@ -78,7 +78,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="md:ml-0 ml-13 mb-5 mt-4 text-itemtitle2 font-bold text-center md:text-left">
+                  <h4 className="md:ml-0 ml-6 mb-5 mt-4 text-itemtitle2 font-bold">
                     LAYANAN KAMI
                   </h4>
 
@@ -119,34 +119,34 @@ const Footer = () => {
                   className="animate_top"
                 >
                   <div>
-                    <h4 className="md:ml-0 ml-13 mb-5 mt-4 text-center text-itemtitle2 font-bold md:text-left">
+                    <h4 className="md:ml-0 ml-6 mb-5 mt-4 text-itemtitle2 font-bold">
                       HUBUNGI KAMI
                     </h4>
 
-                    <div className="mb-2 flex flex-col items-center justify-between md:flex-row">
+                    <div className="mb-2 flex items-center justify-between md:flex-row">
                       <Image
                         width={40}
                         height={50}
                         src="/images/logo/logo-phone.png"
                         alt="Logo"
-                        className="md:ml-0 ml-13 mb-3 mr-0 md:mb-0 md:mr-5"
+                        className="md:ml-0 ml-6 mb-3 mr-0 md:mb-0 md:mr-5 md:mt-0 mt-3"
                       />
-                      <p className="md:ml-0 ml-13 mb-1.5 text-center md:text-sectiontitle text-lg md:text-left">
+                      <p className="md:ml-0 mb-1.5 md:text-sectiontitle md:text-left">
                         0812 8484 1223 (Training)
                         <br />
                         0818 0612 1812 (Consulting)
                       </p>
                     </div>
 
-                    <div className="mb-6 flex flex-col items-center md:flex-row">
+                    <div className="mb-6 flex items-center md:flex-row">
                       <Image
                         width={40}
                         height={50}
                         src="/images/logo/logo-email.png"
                         alt="Logo"
-                        className="md:ml-0 ml-13 mb-3 mr-0 md:mb-0 md:mr-5"
+                        className="md:ml-0 ml-6 mb-3 mr-0 md:mb-0 md:mr-5 md:mt-0 mt-2"
                       />
-                      <p className="md:ml-0 ml-13 mb-1.5 md:text-sectiontitle text-lg md:text-left">
+                      <p className="md:ml-0 ml-6 mb-1.5 md:text-sectiontitle md:text-left">
                         info@pictraining.co.id
                         <br />
                         info@picconsulting.id 

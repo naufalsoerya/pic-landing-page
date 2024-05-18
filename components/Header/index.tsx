@@ -41,7 +41,7 @@ const Header = () => {
               alt="logo"
               width={80}
               height={10}
-              className="w-36 md:w-80" // Tambahkan ukuran kelas w-32 untuk layar hp dan w-80 untuk layar yang lebih besar (md: untuk ukuran layar desktop)
+              className="w-36 md:w-80" 
             />
           </a>
 
@@ -119,7 +119,7 @@ const Header = () => {
                         className={`dropdown ${dropdownToggler ? "flex" : ""}`}
                       >
                         {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="hover:text-primary">
+                          <li key={key} className="hover:text-primary md:w-full w-64">
                             <Link href={item.path || "/"} target="blank">
                               {item.title}
                             </Link>
