@@ -14,7 +14,7 @@ const FormContact = () => {
     <div>
       {/* Jumbotron 1*/}
       <div className="relative md:h-[220px] h-[150px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-22 md:mt-28">
-        <h1 className="md:ml-12 md:mt-8 mt-3 md:text-5xl text-3xl font-bold">Hubungi Kami</h1>
+        <h1 className="md:ml-16 md:mt-8 mt-3 md:text-5xl text-3xl font-bold">Hubungi Kami</h1>
       </div>
       {/* Jumbotron 1*/}
 
@@ -22,7 +22,7 @@ const FormContact = () => {
       <section className="pb-26 overflow-hidden md:pt-40 xl:pb-16 xl:pt-1">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="ml-8 md:w-1/2">
+            <div className="ml-8 md:ml-20 md:w-1/2">
               <h1 className="mb-5 md:mt-0 mt-10 text-3xl font-bold text-black">
                 Hubungi Kami
               </h1>
@@ -134,7 +134,7 @@ const FormContact = () => {
       {/* First Text */}
 
       {/* gmaps */}
-      <div className="relative w-full h-[400px] md:h-[600px]">
+      <div className="relative w-full h-[400px] md:h-[470px]">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1968724183907!2d106.93461579999999!3d-6.2377624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d448e5d2a95%3A0xcd22f05a4c7db3fc!2sPT.%20Ballast%20Graha!5e0!3m2!1sen!2sid!4v1715692808326!5m2!1sen!2sid"
           className="absolute top-0 left-0 w-full h-full"

@@ -12,8 +12,8 @@ const FormContact = () => {
     <div>
       {/* Jumbotron 1*/}
       <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-22 md:mt-28">
-        <h1 className="md:ml-12 md:mt-6 mt-5 md:text-5xl text-3xl font-bold">Penetapan Klasifikasi</h1>
-        <h2 className="font-lg md:ml-12 text-lg">Barang Ekspor dan Impor</h2>
+        <h1 className="md:ml-5 md:mt-6 mt-5 md:text-5xl text-3xl font-bold">Penetapan Klasifikasi</h1>
+        <h2 className="font-lg md:ml-5 text-lg">Barang Ekspor dan Impor</h2>
       </div>
       {/* Jumbotron 1*/}
 
@@ -24,7 +24,7 @@ const FormContact = () => {
             <div className="ml-8 md:w-1/2 md:mr-0 mr-7">
               <div>
                 <img
-                  className="mb-8 mt-20 h-38 md:h-64 w-full rounded-lg"
+                  className="mb-8 mt-20 h-38 md:h-auto w-full rounded-lg"
                   src="/images/about/service2.jpg"
                   alt="product image"
                 />

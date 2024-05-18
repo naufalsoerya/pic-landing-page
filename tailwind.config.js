@@ -16,7 +16,7 @@ module.exports = {
     },
     extend: {
       screens: {
-        'lg': '1125px',  
+        'xl': '1000px',  
       },
       colors: {
         current: "currentColor",

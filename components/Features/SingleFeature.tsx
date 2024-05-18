@@ -26,7 +26,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
           whileInView="visible"
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="animate_top z-40 rounded-lg border border-white bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
+          className="animate_top z-40 rounded-lg border border-white bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-7.5"
         >
           <div>
             <Image

@@ -13,10 +13,10 @@ const aboutPage = () => {
     <>
       {/* Jumbotron 1*/}
       <div className="relative mt-22 h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white md:mt-28">
-        <h1 className="ml-4 mt-6 text-3xl font-bold md:ml-10 md:text-5xl">
+        <h1 className="ml-4 mt-6 text-3xl font-bold md:ml-4 md:text-5xl">
           Tentang PIC
         </h1>
-        <h2 className="font-lg ml-6 mt-2 text-xl md:ml-12 md:text-2xl">
+        <h2 className="font-lg ml-6 mt-2 text-xl md:ml-5 md:text-2xl">
           Training and Consulting
         </h2>
       </div>
@@ -73,9 +73,9 @@ const aboutPage = () => {
             </div>
 
             <div className="animate_right hidden md:w-1/2 lg:block">
-              <div className="h-64max-w-sm mt-5 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+              <div className="h-64max-w-sm mt-5 w-full md:ml-1 rounded-lg border border-gray-200 bg-white shadow">
                 <img
-                  className="rounded-t-lg p-8"
+                  className="rounded-t-lg p-4"
                   src="/images/about/banner(2).jpg"
                   alt="product image"
                 />
@@ -87,9 +87,9 @@ const aboutPage = () => {
       {/* First Text */}
 
       {/* Jumbotron 2 */}
-      <div className="relative md:h-[320px] overflow-hidden bg-[url('/images/about/aboutBanner(1).jpg')] bg-cover bg-no-repeat p-12 text-white">
+      <div className="relative md:h-[350px] overflow-hidden bg-[url('/images/about/aboutBanner(1).jpg')] bg-cover bg-no-repeat p-12 text-white">
         <div className="flex flex-col md:flex-row md:justify-between">
-          <div className="animate_top ml-5 md:ml-36 md:flex-1">
+          <div className="animate_top ml-5 md:ml-24 md:flex-1">
             <h4 className="mb-5 text-4xl font-bold">VISI</h4>
             <ul>
               <li className="font-lg mb-2 mr-5 text-justify">
@@ -100,7 +100,7 @@ const aboutPage = () => {
             </ul>
           </div>
 
-          <div className="animate_top font-lg ml-5 mr-5 md:ml-10 md:mr-11 md:flex-1">
+          <div className="animate_top font-lg ml-5 mr-5 md:ml-10 md:mr-2 md:flex-1">
             <h4 className="mb-5 text-4xl font-bold md:mt-0 mt-10">MISI</h4>
             <ul>
               <li className="mb-4 text-justify">
@@ -114,7 +114,7 @@ const aboutPage = () => {
             </ul>
           </div>
 
-          <div className="animate_top font-lg ml-5 md:flex-1">
+          <div className="animate_top font-lg ml-5 md:ml-12 md:flex-1">
             <h4 className="mb-5 text-4xl font-bold md:mt-0 mt-10">MOTTO</h4>
             <ul>
               <li className="mb-2">Profesional</li>
@@ -136,14 +136,14 @@ const aboutPage = () => {
           <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
             <div className="animate_right ml-10 hidden md:w-1/2 lg:block">
               <img
-                className="rounded-t-lg border border-2 border-gray-200 bg-white pt-5 shadow"
+                className="rounded-t-lg border border-2 border-gray-200 bg-white shadow"
                 src="/images/about/banner(3).jpg"
                 alt="product image"
               />
             </div>
 
-            <div className="ml-8 md:w-1/2 md:mr-0 mr-7">
-              <h1 className="mb-5 text-4xl font-bold text-black">
+            <div className="ml-8 md:w-1/2 md:mr-8 mr-7">
+              <h1 className="mb-5 text-3xl font-bold text-black">
                 Bangunlah impian karir-mu bersama PIC TRAINING
               </h1>
               <p className="mb-5 text-justify">
@@ -153,13 +153,6 @@ const aboutPage = () => {
                 Bangunlah impian karir terbaikmu bersama PIC Training. Insha
                 Allah kami memegang amanah untuk selalu memberikan yang terbaik
                 untuk para peserta kami ! <br />
-              </p>
-              <p className="mb-1 text-justify font-bold text-black">
-                Adang Karyana
-                <br />
-              </p>
-              <p className="mb-5 text-justify text-black">
-                Direktur Utama PIC Training
               </p>
             </div>
           </div>

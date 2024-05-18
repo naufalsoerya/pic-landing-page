@@ -4,11 +4,11 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <>
-      <section className="overflow-hidden pb-20 pt-22 md:pt-40 xl:pb-16 xl:pt-20">
+      <section className="overflow-hidden pb-20 pt-22 md:pt-40 xl:pb-16 xl:pt-18">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="ml-4 md:ml-0 md:w-1/2">
-              <h1 className="mb-5 text-4xl font-bold text-black">
+            <div className="ml-4 md:ml-0 md:w-1/2 md:ml-2">
+              <h1 className="mb-5 text-3xl font-bold text-black">
                 Apapun Masalah Kepabeanan dan Cukai Anda
               </h1>
               <button
@@ -62,13 +62,13 @@ const Hero = () => {
             <div className="animate_right hidden md:w-1/2 lg:block">
               <div className="h-64max-w-sm mt-5 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
                 <img
-                  className="rounded-t-lg p-8"
+                  className="rounded-t-lg p-4"
                   src="/images/about/banner(1).jpg"
                   alt="product image"
                 />
                 <div className="px-5 pb-5">
                   <a href="#">
-                    <h5 className="ml-3 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                       Dipercaya dari berbagai perusahaan terkemuka !
                     </h5>
                   </a>

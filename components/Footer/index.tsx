@@ -7,10 +7,10 @@ const Footer = () => {
   return (
     <>
       <footer className="border-t border-stroke bg-slate-500 text-white">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-4 2xl:px-0">
           {/* <!-- Footer Top --> */}
           <div className="md:py-20 py-12 lg:py-14">
-            <div className="flex flex-wrap gap-8 lg:justify-between lg:gap-0">
+            <div className="flex flex-wrap gap-9">
               <motion.div
                 variants={{
                   hidden: {
@@ -26,7 +26,7 @@ const Footer = () => {
                 whileInView="visible"
                 transition={{ duration: 1, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="animate_top w-full px-4 md:w-1/2 md:px-0 lg:w-1/3 md:ml-14"
+                className="animate_top w-full px-4 md:w-1/2 md:px-0 lg:w-1/3 md:ml-12 md:mr-5.5"
               >
                 <Link href="index.html" className="relative">
                   <Image
@@ -116,7 +116,7 @@ const Footer = () => {
                   whileInView="visible"
                   transition={{ duration: 1, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="animate_top"
+                  className="animate_top md:ml-10"
                 >
                   <div>
                     <h4 className="md:ml-0 ml-6 mb-5 mt-4 text-itemtitle2 font-bold">
