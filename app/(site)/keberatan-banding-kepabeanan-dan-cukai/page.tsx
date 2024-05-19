@@ -2,7 +2,7 @@ import ServiceForm from "@/components/FormService";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Keberatan dan Banding Kepabeanan dan Cukai - Spesialis training kepabeanan, ekspor, dan impor",
+  title: "Asistensi Keberatan Kepabeanan dan Cukai - Spesialis training kepabeanan, ekspor, dan impor",
   description: "PIC Training landing page",
   // other metadata
 };
@@ -12,7 +12,7 @@ const FormContact = () => {
     <div>
       {/* Jumbotron 1*/}
       <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-22 md:mt-28">
-        <h1 className="md:ml-5 md:mt-6 mt-5 md:text-5xl text-3xl font-bold">Keberatan dan Banding</h1>
+        <h1 className="md:ml-5 md:mt-6 mt-5 md:text-5xl text-3xl font-bold">Asistensi Keberatan</h1>
         <h2 className="font-lg md:ml-5 text-lg">Kepabeanan dan Cukai</h2>
       </div>
       {/* Jumbotron 1*/}
@@ -30,7 +30,7 @@ const FormContact = () => {
                 />
               </div>
               <h1 className="mb-5 text-3xl font-bold text-black">
-                Keberatan dan Banding Kepabeanan dan Cukai
+                Asistensi Keberatan Kepabeanan dan Cukai
               </h1>
               <p className="mb-5 text-justify">
                 Sengketa kepabeanan dan cukai adalah peristiwa yang sering

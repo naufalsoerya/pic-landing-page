@@ -24,7 +24,6 @@ const menuData: Menu[] = [
         newTab: false,
         path: "/konsultasi-masalah-kepabeanan-cukai",
       },
-      
       {
         id: 34,
         title: "Penetapan Klasifikasi Barang Ekspor dan Impor",
@@ -51,10 +50,28 @@ const menuData: Menu[] = [
       },
       {
         id: 38,
-        title: "Keberatan dan Banding Kepabeanan dan Cukai",
+        title: "Asistensi Keberatan Kepabeanan dan Cukai",
         newTab: false,
         path: "/keberatan-banding-kepabeanan-dan-cukai",
-      }
+      },
+      {
+        id: 31,
+        title: "Konsultasi Nilai Pabean",
+        newTab: false,
+        path: "/konsultasi-masalah-kepabeanan-cukai",
+      },
+      {
+        id: 31,
+        title: "Kuasa Hukum Banding Pengadilan Pajak",
+        newTab: false,
+        path: "/konsultasi-masalah-kepabeanan-cukai",
+      },
+      {
+        id: 31,
+        title: "Perizinan Fasilitas Kepabeanan",
+        newTab: false,
+        path: "/konsultasi-masalah-kepabeanan-cukai",
+      },
     ],
   },
   {
@@ -78,7 +95,7 @@ const menuData: Menu[] = [
         id: 45,
         title: "eCourse Ahli Kepabeanan",
         newTab: false,
-        path: "https://pictraining.net/kelas-offline-kepabeanan/",
+        path: "https://pictraining.net/ecourse-ahli-kepabeanan/",
       },
       {
         id: 46,

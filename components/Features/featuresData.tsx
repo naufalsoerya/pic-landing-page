@@ -44,7 +44,7 @@ const featuresData: Feature[] = [
   {
     id: 6,
     icon: "/images/icon/icon-6.jpg",
-    title: "Keberatan dan Banding Kepabeanan dan Cukai",
+    title: "Asistensi Keberatan Kepabeanan dan Cukai",
     description:
       "Perusahan Anda terkena notul SPTNP ataupun SPKTNP dan Anda tidak puas dengan itu? Tim kami akan membantu Anda melakukan upaya keberatan kepada DJBC maupun banding ke Pengadilan pajak.",
     link: "/keberatan-banding-kepabeanan-dan-cukai",

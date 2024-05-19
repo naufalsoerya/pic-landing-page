@@ -26,7 +26,7 @@ const aboutPage = () => {
       {/* First Text */}
       <section className="overflow-hidden pb-20 pt-10 md:pt-22 xl:pb-16 xl:pt-20">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
+          <div className="flex xl:gap-32.5 lg:items-center lg:gap-8">
             <div className="ml-8 mr-7 md:mr-0 md:w-1/2">
               <h1 className="mb-5 text-3xl font-bold text-black">
                 Membangun Asa Lewat Karya Nyata
@@ -73,7 +73,7 @@ const aboutPage = () => {
             </div>
 
             <div className="animate_right hidden md:w-1/2 lg:block">
-              <div className="h-64max-w-sm mt-5 w-full md:ml-1 rounded-lg border border-gray-200 bg-white shadow">
+              <div className="h-64max-w-sm mt-5 w-full rounded-lg border border-gray-200 bg-white shadow md:ml-1">
                 <img
                   className="rounded-t-lg p-4"
                   src="/images/about/banner(2).jpg"
@@ -87,12 +87,12 @@ const aboutPage = () => {
       {/* First Text */}
 
       {/* Jumbotron 2 */}
-      <div className="relative md:h-[350px] overflow-hidden bg-[url('/images/about/aboutBanner(1).jpg')] bg-cover bg-no-repeat p-12 text-white">
+      <div className="relative overflow-hidden bg-[url('/images/about/aboutBanner(1).jpg')] bg-cover bg-no-repeat p-12 text-white md:h-[350px]">
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="animate_top ml-5 md:ml-24 md:flex-1">
             <h4 className="mb-5 text-4xl font-bold">VISI</h4>
             <ul>
-              <li className="font-lg mb-2 mr-5 text-justify">
+              <li className="font-lg mb-2 mr-5 md:text-justify">
                 Menjadi institusi bisnis unggulan dalam penyediaan jasa
                 pelatihan dan konsultasi dalam bidang kepabeanan, perdagangan
                 internasional, ekspor dan impor.
@@ -101,13 +101,13 @@ const aboutPage = () => {
           </div>
 
           <div className="animate_top font-lg ml-5 mr-5 md:ml-10 md:mr-2 md:flex-1">
-            <h4 className="mb-5 text-4xl font-bold md:mt-0 mt-10">MISI</h4>
+            <h4 className="mb-5 mt-10 text-4xl font-bold md:mt-0">MISI</h4>
             <ul>
-              <li className="mb-4 text-justify">
+              <li className="mb-4 md:text-justify">
                 Melayani jasa pelatihan di bidang kepabeanan, cukai, dan
                 perdagangan internasional, secara efektif.
               </li>
-              <li className="mb-2 text-justify">
+              <li className="mb-2 md:text-justify">
                 Melayani jasa konsultasi di bidang kepabeanan, perdagangan
                 internasional, ekspor dan impor secara efektif dan solutif.
               </li>
@@ -115,7 +115,7 @@ const aboutPage = () => {
           </div>
 
           <div className="animate_top font-lg ml-5 md:ml-12 md:flex-1">
-            <h4 className="mb-5 text-4xl font-bold md:mt-0 mt-10">MOTTO</h4>
+            <h4 className="mb-5 mt-10 text-4xl font-bold md:mt-0">MOTTO</h4>
             <ul>
               <li className="mb-2">Profesional</li>
               <li className="mb-2">Jujur</li>
@@ -131,9 +131,9 @@ const aboutPage = () => {
       {/* Testimoni */}
 
       {/* Second Text */}
-      <section className="overflow-hidden pb-20 xl:pb-16">
+      <section className="overflow-hidden pb-10 xl:pb-16">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
+          <div className="flex xl:gap-32.5 lg:items-center lg:gap-8">
             <div className="animate_right ml-10 hidden md:w-1/2 lg:block">
               <img
                 className="rounded-t-lg border border-2 border-gray-200 bg-white shadow"
@@ -142,7 +142,7 @@ const aboutPage = () => {
               />
             </div>
 
-            <div className="ml-8 md:w-1/2 md:mr-8 mr-7">
+            <div className="ml-8 mr-7 md:mr-8 md:w-1/2">
               <h1 className="mb-5 text-3xl font-bold text-black">
                 Bangunlah impian karir-mu bersama PIC TRAINING
               </h1>
@@ -156,6 +156,13 @@ const aboutPage = () => {
               </p>
             </div>
           </div>
+        </div>
+        <div className="mx-auto block max-w-c-1390 px-4 md:hidden md:px-8 2xl:px-0">
+          <img
+            className="mt-5 rounded-t-lg border border-2 border-gray-200 bg-white shadow"
+            src="/images/about/banner(3).jpg"
+            alt="product image"
+          />
         </div>
       </section>
       {/* Second Text */}

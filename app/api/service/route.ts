@@ -16,9 +16,9 @@ export async function POST(req: Request, res: NextApiResponse) {
     secure: false,
   });
 
-  const { name, email, phone, message, media, place, company } = body;
+  const { name, email, phone, message, media, place, company, service } = body;
 
-  if (!message || !name || !name || !email || !phone || !media || !place || !company) {
+  if (!message || !name || !email || !phone || !media || !place || !company || !service) {
     return res
       .status(400)
       .json({ message: "Please fill out the necessary fields" });
@@ -33,6 +33,7 @@ export async function POST(req: Request, res: NextApiResponse) {
     <p><b>Nama Perusahaan:</b> ${company}</p> <br/>
     <p><b>Email:</b> ${email}</p> <br/>
     <p><b>Phone:</b> ${phone}</p> <br/>
+    <p><b>Layanan:</b> ${service}</p> <br/>
     <p><b>Media Konsultasi:</b> ${media}</p> <br/>
     <p><b>Kota Asal:</b> ${place}</p> <br/>
     <p>${message}</p>`,

@@ -11,6 +11,7 @@ interface FormData {
   message: string;
   media: string;
   place: string;
+  service: string;
 }
 
 const ServiceForm = () => {
@@ -23,6 +24,7 @@ const ServiceForm = () => {
     message: "",
     media: "",
     place: "",
+    service: "",
   });
 
   const handleChange = (
@@ -50,7 +52,8 @@ const ServiceForm = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://pictraining.vercel.app/api/service",
+        // "https://pictraining.vercel.app/api/service",
+        "http://localhost:3000/api/service",
         {
           method: "POST",
           headers: {
@@ -61,17 +64,31 @@ const ServiceForm = () => {
         },
       );
       if (response.ok) {
-        // Proses jika pengiriman form berhasil
         Swal.fire("Form berhasil dikirim!");
         router.push("/");
       } else {
-        // Proses jika pengiriman Form gagal
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "Form gagal dikirim",
         });
       }
+      await fetch("http://localhost:3000/api/woowa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: formData.name, phone: formData.phone }),
+        cache: "no-store",
+      });
+      await fetch("http://localhost:3000/api/woowa-seller", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+        cache: "no-store",
+      });
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -134,7 +151,7 @@ const ServiceForm = () => {
                     />
                   </div>
 
-                  <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
+                  <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
                     <input
                       type="text"
                       name="phone"
@@ -167,6 +184,48 @@ const ServiceForm = () => {
                       </option>
                     </select>
                   </div>
+
+                  <div className="mb-12.5 flex">
+                    <select
+                      name="service"
+                      className="bg-white-200 w-full rounded-lg px-6 py-3 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none"
+                      onChange={handleChangeSelect}
+                      value={formData.service}
+                    >
+                      <option disabled value="">
+                        Pilihan Layanan
+                      </option>
+                      <option value="Training Ahli Kepabeanan">
+                        Training Ahli Kepabeanan
+                      </option>
+                      <option value="Konsultasi Masalah KC">
+                        Konsultasi Masalah KC
+                      </option>
+                      <option value="Penetapan Klasifikasi Barang">
+                        Penetapan Klasifikasi Barang
+                      </option>
+                      <option value="Audit KC">Audit KC</option>
+                      <option value="Review Kepatuhan dan Mitigasi Resiko">
+                        Review Kepatuhan dan Mitigasi Resiko
+                      </option>
+                      <option value="Inhouse Training KC">
+                        Inhouse Training KC
+                      </option>
+                      <option value="Asistensi Keberatan KC">
+                        Asistensi Keberatan KC
+                      </option>
+                      <option value="Konsultasi Nilai Pabean">
+                        Konsultasi Nilai Pabean
+                      </option>
+                      <option value="Kuasa Hukum Banding PP">
+                        Kuasa Hukum Banding PP
+                      </option>
+                      <option value="Perizinan Fasilitas Kepabeanan">
+                        Perizinan Fasilitas Kepabeanan
+                      </option>
+                    </select>
+                  </div>
+
 
                   <div className="mb-11.5 flex">
                     <textarea
