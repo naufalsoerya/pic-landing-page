@@ -52,8 +52,7 @@ const ServiceForm = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        // "https://pictraining.vercel.app/api/service",
-        "http://localhost:3000/api/service",
+        "/api/service",
         {
           method: "POST",
           headers: {
@@ -73,7 +72,7 @@ const ServiceForm = () => {
           text: "Form gagal dikirim",
         });
       }
-      await fetch("http://localhost:3000/api/woowa", {
+      await fetch("/api/woowa", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +80,7 @@ const ServiceForm = () => {
         body: JSON.stringify({ name: formData.name, phone: formData.phone }),
         cache: "no-store",
       });
-      await fetch("http://localhost:3000/api/woowa-seller", {
+      await fetch("/api/woowa-seller", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

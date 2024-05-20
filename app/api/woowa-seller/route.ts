@@ -11,6 +11,7 @@ export async function POST(req: Request, res: NextApiResponse) {
   const messageData = {
     key: API_KEY,
     phone_no: "081806121812",
+    // phone_no: "081298082677",
     message: `Ada permintaan layanan konsultasi, dari
 
 Nama: ${name}
