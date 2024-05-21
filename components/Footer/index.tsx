@@ -149,7 +149,7 @@ const Footer = () => {
                       <p className="md:ml-0 ml-6 mb-1.5 md:text-sectiontitle md:text-left">
                         info@pictraining.co.id
                         <br />
-                        info@picconsulting.id 
+                        Konsultasi@picconsulting.id 
                       </p>
                     </div>
                   </div>

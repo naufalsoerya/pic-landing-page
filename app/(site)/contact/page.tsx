@@ -52,7 +52,7 @@ const FormContact = () => {
                 <p className="mb-1.5 md:text-sectiontitle text-lg">
                   info@pictraining.co.id{" "}
                   <br />
-                  info@pictraining.id
+                  Konsultasi@picconsulting.id 
                 </p>
               </div>
               <Image

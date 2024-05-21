@@ -31,6 +31,12 @@ const menuData: Menu[] = [
         path: "/penetapan-klasifikasi-barang",
       },
       {
+        id: 31,
+        title: "Konsultasi Nilai Pabean",
+        newTab: false,
+        path: "/konsultasi-nilai-pabean",
+      },
+      {
         id: 35,
         title: "Audit Kepabeanan dan Cukai",
         newTab: false,
@@ -50,27 +56,21 @@ const menuData: Menu[] = [
       },
       {
         id: 38,
-        title: "Asistensi Keberatan Kepabeanan dan Cukai",
+        title: "Keberatan Kepabeanan dan Cukai",
         newTab: false,
         path: "/keberatan-banding-kepabeanan-dan-cukai",
       },
       {
         id: 31,
-        title: "Konsultasi Nilai Pabean",
-        newTab: false,
-        path: "/konsultasi-masalah-kepabeanan-cukai",
-      },
-      {
-        id: 31,
         title: "Kuasa Hukum Banding Pengadilan Pajak",
         newTab: false,
-        path: "/konsultasi-masalah-kepabeanan-cukai",
+        path: "/kuasa-hukum-banding-pengadilan-pajak",
       },
       {
         id: 31,
         title: "Perizinan Fasilitas Kepabeanan",
         newTab: false,
-        path: "/konsultasi-masalah-kepabeanan-cukai",
+        path: "/perizinan-fasilitas-kepabeanan",
       },
     ],
   },

@@ -6,7 +6,7 @@ const featuresData: Feature[] = [
     icon: "/images/icon/icon-1.jpg",
     title: "Konsultasi Masalah Kepabeanan dan Cukai",
     description:
-      "Konsultasikan masalah Kepabeanan dan Cukai Anda kepada kami dan temukan solusi terbaik dari para Expert kami. Hubungi kami untuk info lengkap.",
+      "Konsultasikan masalah Kepabeanan dan Cukai Anda kepada kami dan temukan solusi terbaik dari para Expert kami.",
     link: "/konsultasi-masalah-kepabeanan-cukai",
   },
   {
@@ -14,7 +14,7 @@ const featuresData: Feature[] = [
     icon: "/images/icon/icon-2.jpg",
     title: "Penetapan Klasifikasi Barang",
     description:
-      "Butuh Advis tentang penetapan klasifikasi  atas barang impor atau ekspor ? Expert kami sangat berpengalaman dalam bidang ini. Hubungi kami untuk info lengkap.",
+      "Butuh Advis tentang penetapan klasifikasi atas barang impor atau ekspor ? Expert kami sangat berpengalaman dalam bidang ini.",
     link: "/penetapan-klasifikasi-barang",
   },
   {
@@ -22,7 +22,7 @@ const featuresData: Feature[] = [
     icon: "/images/icon/icon-3.png",
     title: "Audit Kepabeanan dan Cukai",
     description:
-      "Tim kami akan membantu kesiapan perusahaan Anda dan melakukan pre-Audit  sebelum Auditor DJBC melakukan audit kepabeanan/cukai.",
+      "Tim kami akan membantu kesiapan perusahaan Anda dan melakukan pre-Audit sebelum Auditor DJBC melakukan audit kepabeanan/cukai.",
     link: "/audit-kepabeanan-dan-cukai",
   },
   {
@@ -44,10 +44,34 @@ const featuresData: Feature[] = [
   {
     id: 6,
     icon: "/images/icon/icon-6.jpg",
-    title: "Asistensi Keberatan Kepabeanan dan Cukai",
+    title: "Keberatan Kepabeanan dan Cukai",
     description:
-      "Perusahan Anda terkena notul SPTNP ataupun SPKTNP dan Anda tidak puas dengan itu? Tim kami akan membantu Anda melakukan upaya keberatan kepada DJBC maupun banding ke Pengadilan pajak.",
+      "Perusahan Anda terkena notul SPTNP ataupun SPKTNP dan Anda tidak puas dengan itu? Tim kami akan membantu Anda melakukan upaya keberatan kepada DJBC dengan menyusun berkas dan argumen keberatan yang terbaik.",
     link: "/keberatan-banding-kepabeanan-dan-cukai",
+  },
+  {
+    id: 7,
+    icon: "/images/icon/icon-7.jpg",
+    title: "Kuasa Hukum Banding Pengadilan Pajak",
+    description:
+      "Tim PIC akan membantu perusahaan Anda untuk proses banding atas sengketa kepabeanan dan cukai di Pengadilan Pajak.  Sifat bantuan yang kami tawarkan dapat Anda pilih, apakah hanya bersifat asistensi penyiapan berkas dan argumen banding atau  full pendampingan hingga beracara di Pengadilan Pajak.",
+    link: "/kuasa-hukum-banding-pengadilan-pajak",
+  },
+  {
+    id: 8,
+    icon: "/images/icon/icon-8.jpg",
+    title: "Konsultasi Nilai Pabean",
+    description:
+      "Apakah Anda memiliki masalah terkena notul karena nilai pabean? Ingin berkonsultasi bagaimana cara mengantisipasinya dan mencari solusi terbaik? Hindari potensi masalah nilai pabean ini dengan konsultasi kepada expert kami !.",
+    link: "/konsultasi-nilai-pabean",
+  },
+  {
+    id: 9,
+    icon: "/images/icon/icon-9.jpg",
+    title: "Perizinan Fasilitas Kepabeanan",
+    description:
+      "Tim Konsultan PIC akan memberikan saran dan masukan dalam memilih fasilitas kepabeanan yang cocok dengan karakter bisnis Anda. Termasuk, apabila dibutuhkan, kami siap membantu Anda dalam pengurusan perizinan fasilitas kepabeanan.",
+    link: "/perizinan-fasilitas-kepabeanan",
   },
 ];
 
