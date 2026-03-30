@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Audit Kepabeanan dan Cukai - Spesialis training kepabeanan, ekspor, dan impor",
   description: "PIC Training landing page",
 };
+ 
 
 const AuditKepabeananPage = () => {
   return (
