@@ -1,53 +1,40 @@
 import React from "react";
 import { Feature } from "@/types/feature";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { icon, title, description, link } = feature;
 
   return (
-    <>
-      <Link href={link}>
-        <motion.div
-          variants={{
-            hidden: {
-              opacity: 0,
-              y: -10,
-            },
-
-            visible: {
-              opacity: 1,
-              y: 0,
-            },
-          }}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="h-full animate_top z-40 rounded-lg border border-white bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-7.5"
-        >
-          <div>
+    <Link href={link} className="group">
+      <Card className="h-full border border-slate-100 hover:border-gojek-green/30 hover:shadow-lg transition-all duration-300">
+        <CardContent className="p-0">
+          <div className="overflow-hidden rounded-t-2xl">
             <Image
-              className="rounded-t-lg ml-5"
               src={icon}
-              alt=""
-              width="260"
-              height="64"
+              alt={title}
+              width={400}
+              height={250}
+              className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {title}
-              </h5>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {description}
-              </p>
+          </div>
+          <div className="p-6">
+            <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-gojek-green transition-colors">
+              {title}
+            </h3>
+            <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              {description}
+            </p>
+            <div className="flex items-center gap-1.5 text-gojek-green font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              Selengkapnya <ArrowRight className="h-4 w-4" />
             </div>
           </div>
-        </motion.div>
-      </Link>
-    </>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 

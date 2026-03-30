@@ -1,13 +1,19 @@
 "use client";
 
-import ScrollToTop from "@/components/ScrollToTop";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
-import "../globals.css";
-const inter = Inter({ subsets: ["latin"] });
-
-import ToasterContext from "../context/ToastContext";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+import ToasterContext from "../context/ToastContext";
+import "../globals.css";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -15,11 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className}`}>
+    <html lang="id" className={plusJakarta.variable}>
+      <body className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden touch-manipulation">
         <Header />
         <ToasterContext />
-        {children}
+        <main>{children}</main>
         <ScrollToTop />
         <Footer />
       </body>

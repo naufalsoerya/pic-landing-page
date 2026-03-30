@@ -1,137 +1,64 @@
 "use client";
+
 import Link from "next/link";
+import { Building2, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <>
-      <section className="overflow-hidden pb-20 pt-22 md:pt-40 xl:pb-16 xl:pt-18">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="ml-4 md:ml-0 md:w-1/2 md:ml-2">
-              <h1 className="mb-5 text-3xl font-bold text-black">
-                Apapun Masalah Kepabeanan dan Cukai Anda
-              </h1>
-              <button
-                aria-label="get started button"
-                className="pointer-events-none mb-5 mt-4 flex rounded-full bg-blue-400 px-4 py-1.5 font-bold text-white duration-300 ease-in-out hover:bg-blackho"
-              >
-                PERCAYAKAN KEPADA KAMI
-              </button>
-              <p className="text-justify">
-                Berbekal pengalaman kami sebagai provider training kepabeanan
-                terpercaya sejak tahun 2015 dan didukung oleh expert Kepabeanan
-                dan Cukai terbaik dari berbagai kalangan: praktisi, dosen dan
-                eks widyaiswara Kepabeananan serta eks pejabat DJBC, kami
-                berkomitmen untuk memberikan solusi terbaik atas permasalahan
-                kepabeanan dan cukai pada Perusahaan Anda. Kepuasan layanan dan
-                Kepercayaan Anda adalah prioritas utama kami. Berikut komitmen
-                kami untuk Anda.
-              </p>
-              <div className="mt-5 flex">
-                <p className="mr-10">✅ Konsultan berpengalaman</p>
-                <p>✅ Biaya hemat dan bersaing</p>
-              </div>
-              <div className="mt-2 flex">
-                <p className="mr-21">✅ Privasi data terjamin</p>
-                <p>✅ proses cepat dan efektif</p>
-              </div>
-              <div className="mt-2 flex">
-                <p className="mr-4">✅ Fleksibilitas waktu dan media</p>
-                <p>✅ Ramah dan komunikatif</p>
-              </div>
-              <div className="mt-8 flex flex-col sm:flex-row sm:items-center">
-                <Link href="/konsultasi-masalah-kepabeanan-cukai">
-                  <button
-                    aria-label="get started button"
-                    className="mb-4 flex rounded-full bg-blue-900 px-7 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-black sm:mb-0 sm:mr-4"
-                  >
-                    FORM KONSULTASI
-                  </button>
-                </Link>
-                <Link href="https://wa.me/6281806121812" target="_blank">
-                  <button
-                    aria-label="contact via WhatsApp button"
-                    className="flex rounded-full bg-green-600 px-7 py-2.5 font-bold text-white duration-300 ease-in-out hover:bg-green-900"
-                  >
-                    0812 9808 2677
-                  </button>
-                </Link>
-              </div>
-            </div>
+    <section className="relative pt-36 pb-16 sm:pt-44 sm:pb-20 lg:pt-32 lg:pb-32 bg-white overflow-hidden">
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gojek-green-light rounded-full blur-3xl opacity-70 -translate-y-1/4 translate-x-1/4 -z-10" />
 
-            <div className="animate_right hidden md:w-1/2 lg:block">
-              <div className="h-64max-w-sm mt-5 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-                <img
-                  className="rounded-t-lg p-4"
-                  src="/images/about/banner(1).jpg"
-                  alt="product image"
-                />
-                <div className="px-5 pb-5">
-                  <a href="#">
-                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                      Dipercaya dari berbagai perusahaan terkemuka !
-                    </h5>
-                  </a>
-                  <div className="mb-5 ml-3 mt-2.5 flex items-center">
-                    <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                      <svg
-                        className="h-4 w-4 text-yellow-300"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 22 20"
-                      >
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-300"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 22 20"
-                      >
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-300"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 22 20"
-                      >
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-300"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 22 20"
-                      >
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg
-                        className="h-4 w-4 text-yellow-300"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 22 20"
-                      >
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                    <span className="ms-3 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-200 dark:text-blue-800">
-                      5.0
-                    </span>
-                  </div>
-                </div>
-              </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+        <div className="space-y-5 sm:space-y-8 relative z-10 min-w-0">
+          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-bold shadow-sm">
+            <Building2 size={14} className="shrink-0 sm:w-4 sm:h-4" /> Mitra Bisnis Konsultasi Kepabeanan Anda
+          </div>
+          <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black leading-tight text-slate-900 tracking-tighter uppercase break-words">
+            Solusi <br />
+            <span className="text-gojek-green">Kepabeanan</span> <br />
+            dan Cukai.
+          </h1>
+          <p className="text-base sm:text-lg text-slate-600 max-w-lg leading-relaxed font-medium">
+            Layanan konsultasi kepabeanan dan cukai untuk setiap masalah Anda.
+            Didukung oleh expert terbaik yang sangat berpengalaman sejak tahun 2015.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <Button size="xl" asChild className="min-h-[48px] w-full sm:w-auto">
+              <Link href="/contact" className="flex items-center justify-center gap-2">
+                Mulai Konsultasi <ArrowRight size={20} />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline-white" asChild className="border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white min-h-[48px] w-full sm:w-auto">
+              <Link href="https://wa.me/6281806121812" target="_blank" className="flex items-center justify-center">
+                WhatsApp
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative hidden lg:block">
+          <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-8 border-white transform hover:rotate-2 transition-transform duration-500">
+            <img
+              src="https://images.unsplash.com/photo-1707378175150-faa2903feefc?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Pelabuhan - Kepabeanan Ekspor Impor"
+              className="w-full h-[550px] object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-6 -left-10 bg-white p-6 rounded-3xl shadow-2xl z-20 flex items-center gap-4">
+            <div className="w-14 h-14 bg-gojek-green rounded-2xl flex items-center justify-center text-white shadow-lg">
+              <span className="font-black text-xl">10+</span>
+            </div>
+            <div>
+              <p className="font-black text-2xl">10 Tahun+</p>
+              <p className="text-sm font-bold text-slate-500 whitespace-nowrap">
+                Pengalaman Konsultasi
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
-};
-
-export default Hero;
+}

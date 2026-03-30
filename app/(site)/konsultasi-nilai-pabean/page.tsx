@@ -2,79 +2,64 @@ import ServiceForm from "@/components/FormService";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Konsultasi Nilai Pabean - Spesialis training kepabeanan, ekspor, dan impor",
+  title: "Konsultasi Nilai Pabean - Spesialis training kepabeanan, ekspor, dan impor",
   description: "PIC Training landing page",
-  // other metadata
 };
 
-const FormContact = () => {
+const KonsultasiNilaiPabeanPage = () => {
   return (
     <div>
-      {/* Jumbotron 1*/}
-      <div className="relative mt-22 h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white md:mt-28">
-        <h1 className="mt-7 text-3xl font-bold md:ml-5 md:mt-10 md:text-5xl">
-          Konsultasi Nilai Pabean
-        </h1>
-        {/* <h2 className="font-lg text-lg md:ml-5">Pengadilan Pajak</h2> */}
-      </div>
-      {/* Jumbotron 1*/}
+      <section className="relative pt-28 pb-12 sm:pt-36 sm:pb-16 bg-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gojek-green-light rounded-full blur-3xl opacity-70 -translate-y-1/4 translate-x-1/4 -z-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-4">
+          <p className="text-gojek-green font-bold text-sm uppercase tracking-widest">Layanan</p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-slate-900 tracking-tighter uppercase">
+            Konsultasi <br /><span className="text-gojek-green">Nilai Pabean</span>
+          </h1>
+        </div>
+      </section>
 
-      {/* First Text */}
-      <section className="pb-26 overflow-hidden md:pt-40 xl:pb-16 xl:pt-1">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex flex-col xl:gap-32.5 lg:flex-row lg:items-center lg:gap-8">
-            <div className="ml-8 mr-7 md:mr-0 md:w-1/2">
-              <div>
-                <img
-                  className="h-38 mb-8 mt-20 w-full rounded-lg md:h-auto"
-                  src="/images/icon/icon-8.jpg"
-                  alt="product image"
-                />
+      <section className="pb-16 sm:pb-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16">
+            <div className="space-y-8">
+              <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+                <img className="w-full h-auto object-cover" src="/images/icon/icon-8.jpg" alt="Konsultasi Nilai Pabean" />
               </div>
-              <h1 className="mb-5 text-3xl font-bold text-black">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 uppercase tracking-tighter">
                 Konsultasi Nilai Pabean
-              </h1>
-              <p className="mb-5 text-justify">
-                Notul atas pemberitahuan impor barang karena nilai pabean
-                seringkali menjadi masalah yang dialami oleh importir. Importir
-                merasa sudah memberitahukan dengan jujur nilai invoice yang
-                ditransaksikan namun kok masih kena notul (SPTNP)?. <br />
-              </p>
-              <p className="mb-5 text-justify">
-                Perbedaan pemahaman importir dengan regulasi sistem nilai pabean
-                yang diterapkan Bea dan Cukai menjadi pokok utama permasalahan.
-                Sistem nilai pabean yang berlaku di Indonesia mengacu pada
-                ketentuan internasional yaitu... Ada 6 metode penetapan nilai
-                pabean yang digunakan secara hirarki oleh Pejabat Bea dan Cukai.
-                Setiap metode penetapan nilai pabean harus memenuhi syarat dan
-                ketentuan masing-masing. <br />
-              </p>
-              <p className="mb-5 text-justify">
-                <span className="font-bold">
-                  Apakah Anda memiliki masalah terkena notul karena nilai
-                  pabean? Ingin berkonsultasi bagaimana cara mengantisipasinya
-                  dan mencari solusi terbaik? Hindari potensi masalah nilai
-                  pabean ini dengan konsultasi kepada expert kami !.
-                </span>{" "}
-                <br />
-              </p>
-              <p className="mb-5 text-justify">
-                Kami memaklumi kesibukan dan menghargai waktu Anda yang sangat
-                berharga. Untuk itu, konsultasi yang kami berikan sangat
-                fleksibel mengikuti kesiapan Anda . Media konsultasi dapat
-                dipilih sesuai kenyamanan Anda.
-              </p>
+              </h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed font-medium">
+                <p>
+                  Notul atas pemberitahuan impor barang karena nilai pabean
+                  seringkali menjadi masalah yang dialami oleh importir.
+                </p>
+                <p>
+                  Perbedaan pemahaman importir dengan regulasi sistem nilai pabean
+                  yang diterapkan Bea dan Cukai menjadi pokok utama permasalahan.
+                  Ada 6 metode penetapan nilai pabean yang digunakan secara hirarki oleh Pejabat Bea dan Cukai.
+                </p>
+                <p>
+                  <span className="font-black text-slate-900">
+                    Apakah Anda memiliki masalah terkena notul karena nilai
+                    pabean? Hindari potensi masalah nilai pabean ini dengan konsultasi kepada expert kami!
+                  </span>
+                </p>
+                <p>
+                  Kami memaklumi kesibukan dan menghargai waktu Anda yang sangat
+                  berharga. Untuk itu, konsultasi yang kami berikan sangat
+                  fleksibel mengikuti kesiapan Anda.
+                </p>
+              </div>
             </div>
-            {/* Service Form */}
-            <ServiceForm />
-            {/* Service Form */}
+            <div>
+              <ServiceForm />
+            </div>
           </div>
         </div>
       </section>
-      {/* First Text */}
     </div>
   );
 };
 
-export default FormContact;
+export default KonsultasiNilaiPabeanPage;

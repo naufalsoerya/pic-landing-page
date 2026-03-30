@@ -1,142 +1,116 @@
-"use client"
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Phone, ArrowRight } from "lucide-react";
 
 const Jumbotron2 = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1050); // Sesuaikan dengan breakpoint yang diinginkan
-    };
-
-    // Mengecek ukuran layar awal
-    handleResize();
-
-    // Mendengarkan peristiwa resize window
-    window.addEventListener('resize', handleResize);
-
-    // Membersihkan event listener pada unmounting
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  if (isMobile) {
-    return null; // Mengembalikan null untuk menyembunyikan jumbotron pada perangkat mobile
-  }
-
   return (
-    <>
-      {/* Jumbotron 1 */}
-      <div className="relative h-[320px] overflow-hidden bg-[url('/images/about/aboutBanner(1).jpg')] bg-cover bg-no-repeat p-12 text-white">
-        <div className="flex w-full flex-col md:flex-row md:justify-between">
-          <div className="animate_top ml-50 mt-10 flex-1">
-            <h4 className="mb-5 text-3xl font-bold">Request</h4>
-
-            <ul>
-              <li className="mb-5 text-justify text-lg">
+    <section className="py-0">
+      {/* CTA Band */}
+      <div className="relative overflow-hidden bg-[url('/images/about/aboutBanner(1).jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                Request Penawaran
+              </h3>
+              <p className="text-white/80 text-lg mb-6">
                 Penawaran jasa layanan kami ?
-              </li>
-              <li className="font-lg mb-2 text-justify">
-                <Link href={"/contact"}>
-                  <button
-                    aria-label="get started button"
-                    className="mr-10 flex rounded-full bg-slate-200 px-8 py-2 font-bold text-blue-950 duration-300 ease-in-out hover:bg-blue-900 hover:text-white"
-                  >
-                    Click Here
-                  </button>
+              </p>
+              <Button
+                size="lg"
+                asChild
+                className="bg-white text-slate-900 hover:bg-slate-100 font-extrabold"
+              >
+                <Link href="/contact">
+                  Hubungi Kami <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="animate_top font-lg mr-14 mt-10 flex-1">
-            <h4 className="mb-5 ml-4 text-3xl font-bold">Hubungi Kami</h4>
-
-            <ul>
-              <li className="mb-4 text-justify">
-                <Link href={"https://wa.me/6281806121812"} target="_blank">
-                  <button
-                    aria-label="get started button"
-                    className="flex rounded-full bg-green-600 px-11 py-2 text-lg font-bold text-white duration-300 ease-in-out hover:bg-slate-200 hover:text-green-600"
-                  >
-                    0812 9808 2677
-                  </button>
+              </Button>
+            </div>
+            <div>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                Hubungi Kami
+              </h3>
+              <Button
+                size="lg"
+                asChild
+                className="bg-green-600 hover:bg-green-700 text-white font-bold"
+              >
+                <Link href="https://wa.me/6281806121812" target="_blank">
+                  <Phone className="mr-2 h-4 w-4" />
+                  0812 9808 2677
                 </Link>
-              </li>
-            </ul>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-      {/* Jumbotron 1 */}
 
-      {/* Jumbotron 2 */}
-      <div className="flex">
-        <div className="relative h-[440px] flex-1 overflow-hidden bg-[url('/images/about/banner(4).jpg')] bg-cover bg-no-repeat p-12 text-white">
-          <div className="flex w-full flex-col md:flex-row md:justify-between">
-            
-          </div>
-        </div>
+      {/* Split promo section */}
+      <div className="hidden lg:grid grid-cols-3">
+        <div className="relative h-[400px] overflow-hidden bg-[url('/images/about/banner(4).jpg')] bg-cover bg-center" />
 
-        <div className="relative h-[440px] flex-1 overflow-hidden bg-blue-950 p-12 text-white">
-          <div className="flex w-full flex-col md:flex-row md:justify-between">
-            <div className="animate_top mt-10 flex-1">
-              <button
-                aria-label="get started button"
-                className="pointer-events-none ml-24 text-lg mb-5 mt-4 flex rounded-2xl bg-blue-500 px-8 py-2 font-bold text-white duration-300 ease-in-out hover:bg-black"
-              >
-                Atau ...
-              </button>
-              <button
-                aria-label="get started button"
-                className="pointer-events-none mb-6 text-ms mt-4 flex rounded-2xl bg-slate-200 px-4 py-3.5 font-bold text-black duration-300 ease-in-out"
-              >
-                mungkin Anda membutuhkan Tempat Training Kepabeanan terbaik
-                yang terbukti paling banyak Kelulusan Ujian SAK nya ?
-              </button>
-              <Link href={"https://pictraining.co.id/"} target="_blank">
-                <button
-                  aria-label="get started button"
-                  className="flex rounded-full bg-slate-200 px-8 py-2 text-1xl font-bold text-black duration-300 ease-in-out hover:bg-yellow-400 hover:text-white mt-4 md:ml-22"
-                >
-                  Click Here
-                </button>
+        <div className="relative h-[400px] bg-slate-900 flex items-center justify-center p-10">
+          <div className="text-center">
+            <span className="inline-block rounded-2xl bg-gojek-green px-6 py-2 text-white font-bold text-lg mb-6">
+              Atau ...
+            </span>
+            <p className="text-slate-200 text-base leading-relaxed mb-8 max-w-sm mx-auto">
+              Mungkin Anda membutuhkan Tempat Training Kepabeanan terbaik
+              yang terbukti paling banyak Kelulusan Ujian SAK nya ?
+            </p>
+            <Button
+              size="lg"
+              asChild
+              className="bg-white text-slate-900 hover:bg-yellow-400 hover:text-white font-extrabold"
+            >
+              <Link href="https://pictraining.co.id/" target="_blank">
+                Kunjungi PIC Training
               </Link>
-            </div>
+            </Button>
           </div>
         </div>
 
-        <div className="relative h-[440px] flex-1 overflow-hidden bg-[url('/images/about/jumbotron2.jpg')] bg-cover bg-no-repeat text-black">
-          <div className="flex w-full flex-col md:flex-row md:justify-between">
-            <div className="animate_top ml-20 mt-2  items-center">
-              <h4 className="mb-1 text-center md:text-left">
-                <span className="text-xl font-bold">BEST PROVIDER</span> <br />
-                <span className="text-lg">Training Kepabeanan</span>
-              </h4>
-              <div className="mr-4 hidden md:block">
-                <Image
-                  src="/images/logo/logo-light.svg"
-                  alt="logo"
-                  width={150}
-                  height={10}
-                />
-              </div>
-            </div>
-            <div className="block md:hidden mx-auto mt-4">
-              <Image
-                src="/images/logo/logo-light.svg"
-                alt="logo"
-                width={150}
-                height={10}
-              />
-            </div>
+        <div className="relative h-[400px] overflow-hidden bg-[url('/images/about/jumbotron2.jpg')] bg-cover bg-center flex items-start justify-center p-10">
+          <div className="text-center">
+            <h4 className="text-xl font-extrabold text-slate-900">BEST PROVIDER</h4>
+            <p className="text-lg text-slate-700 mb-4">Training Kepabeanan</p>
+            <Image
+              src="/images/logo/logo-light.svg"
+              alt="PIC Training"
+              width={150}
+              height={40}
+              className="mx-auto"
+            />
           </div>
         </div>
       </div>
-      {/* Jumbotron 2 */}
-    </>
+
+      {/* Mobile version of split promo */}
+      <div className="lg:hidden bg-slate-900 py-12 px-6">
+        <div className="text-center max-w-md mx-auto">
+          <span className="inline-block rounded-2xl bg-gojek-green px-6 py-2 text-white font-bold text-lg mb-6">
+            Atau ...
+          </span>
+          <p className="text-slate-200 text-base leading-relaxed mb-8">
+            Mungkin Anda membutuhkan Tempat Training Kepabeanan terbaik
+            yang terbukti paling banyak Kelulusan Ujian SAK nya ?
+          </p>
+          <Button
+            size="lg"
+            asChild
+            className="bg-white text-slate-900 hover:bg-yellow-400 hover:text-white font-extrabold"
+          >
+            <Link href="https://pictraining.co.id/" target="_blank">
+              Kunjungi PIC Training
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
   );
 };
 

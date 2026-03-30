@@ -2,6 +2,15 @@
 import { useRouter } from "next/navigation";
 import { useState, ChangeEvent, FormEvent } from "react";
 import Swal from "sweetalert2";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+import { Send } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -37,222 +46,124 @@ const ContactForm = () => {
     }));
   };
 
-  const handleChangeSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-    const { name, options } = e.target;
-    const selectedOptions = Array.from(options)
-      .filter((option) => option.selected)
-      .map((option) => option.value);
+  const handleSelectChange = (name: string, value: string) => {
     setFormData((prevState) => ({
       ...prevState,
-      [name]: selectedOptions,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        "/api/service",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-          cache: "no-store",
-        },
-      );
+      const response = await fetch("/api/service", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+        cache: "no-store",
+      });
       if (response.ok) {
         Swal.fire("Form berhasil dikirim!");
         router.push("/");
       } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Form gagal dikirim",
-        });
+        Swal.fire({ icon: "error", title: "Oops...", text: "Form gagal dikirim" });
       }
       await fetch("/api/woowa", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: formData.name, phone: formData.phone }),
         cache: "no-store",
       });
       await fetch("/api/woowa-seller", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
         cache: "no-store",
       });
     } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Error mengirim form",
-      });
+      Swal.fire({ icon: "error", title: "Oops...", text: "Error mengirim form" });
     }
   };
 
+  const inputClass =
+    "w-full rounded-2xl border border-orange-200 bg-white px-5 py-4 text-sm text-slate-800 placeholder:text-slate-400 focus:border-gojek-green focus:outline-none focus:ring-2 focus:ring-gojek-green/20 transition-all";
+
   return (
-    <div>
-      <div className="animate_right">
-        {/* <!-- ===== Contact Start ===== --> */}
-        <section id="support" className="px-0 md:px-4 2xl:px-0">
-          <div className="relative mx-auto max-w-c-1390 pb-12 pt-6 md:px-7.5 md:pt-10 xl:px-20 xl:pt-14 lg:px-15 lg:pt-15">
-            <div className="gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-10">
-              <div className="animate_top w-full rounded-xl bg-blue-950 px-14 py-12 shadow-solid-8">
-                <h2 className="mb-8 text-3xl font-bold text-white md:mb-15 xl:text-sectiontitle2">
-                  Hubungi Kami
-                </h2>
+    <div className="w-full">
+      <div className="rounded-[32px] sm:rounded-[40px] bg-gojek-green p-8 sm:p-10 shadow-2xl shadow-orange-900/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:24px_24px]" />
+        <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-white/10 blur-[100px] rounded-full -translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Nama Anda"
-                      className="bg-white-200 rounded-lg px-6 py-2 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none lg:w-1/2"
-                      onChange={handleChange}
-                      value={formData.name}
-                    />
+        <div className="relative z-10">
+          <h2 className="mb-8 text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter">
+            Hubungi Kami
+          </h2>
 
-                    <input
-                      type="text"
-                      name="company"
-                      placeholder="Nama Perusahaan"
-                      className="bg-white-200 rounded-lg px-6 py-2 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none lg:w-1/2"
-                      onChange={handleChange}
-                      value={formData.company}
-                    />
-                  </div>
-
-                  <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      className="bg-white-200 rounded-lg px-6 py-2 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none lg:w-1/2"
-                      onChange={handleChange}
-                      value={formData.email}
-                    />
-
-                    <input
-                      type="text"
-                      name="place"
-                      placeholder="Kota Asal"
-                      className="bg-white-200 rounded-lg px-6 py-2 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none lg:w-1/2"
-                      onChange={handleChange}
-                      value={formData.place}
-                    />
-                  </div>
-
-                  <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-7">
-                    <input
-                      type="text"
-                      name="phone"
-                      placeholder="Nomor Telepon"
-                      className="bg-white-200 rounded-lg px-6 py-2 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none lg:w-1/2"
-                      onChange={handleChange}
-                      value={formData.phone}
-                    />
-                    <select
-                      name="service"
-                      className="bg-white-200 rounded-lg px-6 py-2 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none lg:w-1/2"
-                      onChange={handleChangeSelect}
-                      value={formData.service}
-                    >
-                      <option disabled value="">
-                        Pilihan Layanan
-                      </option>
-                      <option value="Training Ahli Kepabeanan">
-                        Training Ahli Kepabeanan
-                      </option>
-                      <option value="Request Penawaran">
-                        Request Penawaran
-                      </option>
-                      <option value="Konsultasi Masalah KC">
-                        Konsultasi Masalah KC
-                      </option>
-                      <option value="Penetapan Klasifikasi Barang">
-                        Penetapan Klasifikasi Barang
-                      </option>
-                      <option value="Audit KC">Audit KC</option>
-                      <option value="Review Kepatuhan dan Mitigasi Resiko">
-                        Review Kepatuhan dan Mitigasi Resiko
-                      </option>
-                      <option value="Inhouse Training KC">
-                        Inhouse Training KC
-                      </option>
-                      <option value="Asistensi Keberatan KC">
-                        Asistensi Keberatan KC
-                      </option>
-                      <option value="Konsultasi Nilai Pabean">
-                        Konsultasi Nilai Pabean
-                      </option>
-                      <option value="Kuasa Hukum Banding PP">
-                        Kuasa Hukum Banding PP
-                      </option>
-                      <option value="Perizinan Fasilitas Kepabeanan">
-                        Perizinan Fasilitas Kepabeanan
-                      </option>
-                    </select>
-                  </div>
-
-                  <div className="mb-12.5 flex">
-                    <select
-                      name="media"
-                      className="bg-white-200 w-full rounded-lg px-6 py-3 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none"
-                      onChange={handleChangeSelect}
-                      value={formData.media}
-                    >
-                      <option disabled value="">
-                        Media Konsultasi
-                      </option>
-                      <option value="Offline di kantor PIC">
-                        Offline di kantor PIC
-                      </option>
-                      <option value="Offline di tempat lain">
-                        Offline di tempat lain
-                      </option>
-                      <option value="Online via zoom">Online via zoom</option>
-                      <option value="Konsultasi by WA/Email">
-                        Konsultasi by WA/Email
-                      </option>
-                      <option value="Konsultasi by Phone">
-                        Konsultasi by Phone
-                      </option>
-                    </select>
-                  </div>
-
-                  <div className="mb-11.5 flex">
-                    <textarea
-                      placeholder="Pesan"
-                      rows={5}
-                      name="message"
-                      className="bg-white-200 w-full rounded-lg px-6 py-2 pl-2 text-slate-600 focus:border-waterloo focus:placeholder:text-gray-600 focus-visible:outline-none"
-                      onChange={handleChange}
-                      value={formData.message}
-                    ></textarea>
-                  </div>
-
-                  <div className="flex flex-wrap gap-4 xl:justify-between ">
-                    <button
-                      aria-label="send message"
-                      className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 font-medium text-black duration-300 ease-in-out hover:bg-blue-900 hover:text-white"
-                      type="submit"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
-              </div>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" name="name" placeholder="Nama Anda" className={inputClass} onChange={handleChange} value={formData.name} />
+              <input type="text" name="company" placeholder="Nama Perusahaan" className={inputClass} onChange={handleChange} value={formData.company} />
             </div>
-          </div>
-        </section>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="email" name="email" placeholder="Email" className={inputClass} onChange={handleChange} value={formData.email} />
+              <input type="text" name="place" placeholder="Kota Asal" className={inputClass} onChange={handleChange} value={formData.place} />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" name="phone" placeholder="Nomor Telepon" className={inputClass} onChange={handleChange} value={formData.phone} />
+              <Select value={formData.service} onValueChange={(val) => handleSelectChange("service", val)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Pilihan Layanan" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Training Ahli Kepabeanan">Training Ahli Kepabeanan</SelectItem>
+                  <SelectItem value="Request Penawaran">Request Penawaran</SelectItem>
+                  <SelectItem value="Konsultasi Masalah KC">Konsultasi Masalah KC</SelectItem>
+                  <SelectItem value="Penetapan Klasifikasi Barang">Penetapan Klasifikasi Barang</SelectItem>
+                  <SelectItem value="Audit KC">Audit KC</SelectItem>
+                  <SelectItem value="Review Kepatuhan dan Mitigasi Resiko">Review Kepatuhan dan Mitigasi Resiko</SelectItem>
+                  <SelectItem value="Inhouse Training KC">Inhouse Training KC</SelectItem>
+                  <SelectItem value="Asistensi Keberatan KC">Asistensi Keberatan KC</SelectItem>
+                  <SelectItem value="Konsultasi Nilai Pabean">Konsultasi Nilai Pabean</SelectItem>
+                  <SelectItem value="Kuasa Hukum Banding PP">Kuasa Hukum Banding PP</SelectItem>
+                  <SelectItem value="Perizinan Fasilitas Kepabeanan">Perizinan Fasilitas Kepabeanan</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <Select value={formData.media} onValueChange={(val) => handleSelectChange("media", val)}>
+              <SelectTrigger>
+                <SelectValue placeholder="Media Konsultasi" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Offline di kantor PIC">Offline di kantor PIC</SelectItem>
+                <SelectItem value="Offline di tempat lain">Offline di tempat lain</SelectItem>
+                <SelectItem value="Online via zoom">Online via zoom</SelectItem>
+                <SelectItem value="Konsultasi by WA/Email">Konsultasi by WA/Email</SelectItem>
+                <SelectItem value="Konsultasi by Phone">Konsultasi by Phone</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <textarea
+              placeholder="Pesan"
+              rows={5}
+              name="message"
+              className={`${inputClass} resize-none`}
+              onChange={handleChange}
+              value={formData.message}
+            />
+
+            <Button
+              type="submit"
+              size="lg"
+              className="bg-white text-gojek-green hover:bg-white/90 font-black w-full sm:w-auto transition-all"
+            >
+              <Send className="mr-2 h-4 w-4" />
+              Kirim Pesan
+            </Button>
+          </form>
+        </div>
       </div>
     </div>
   );

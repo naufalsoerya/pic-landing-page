@@ -4,69 +4,59 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Asistensi Keberatan Kepabeanan dan Cukai - Spesialis training kepabeanan, ekspor, dan impor",
   description: "PIC Training landing page",
-  // other metadata
 };
 
-const FormContact = () => {
+const KeberatanKepabeananPage = () => {
   return (
     <div>
-      {/* Jumbotron 1*/}
-      <div className="relative h-[220px] overflow-hidden bg-[url('/images/about/aboutBanner.png')] bg-cover bg-no-repeat p-12 text-white mt-22 md:mt-28">
-        <h1 className="md:ml-5 md:mt-6 mt-5 md:text-5xl text-3xl font-bold">Asistensi Keberatan</h1>
-        <h2 className="font-lg md:ml-5 text-lg">Kepabeanan dan Cukai</h2>
-      </div>
-      {/* Jumbotron 1*/}
+      <section className="relative pt-28 pb-12 sm:pt-36 sm:pb-16 bg-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gojek-green-light rounded-full blur-3xl opacity-70 -translate-y-1/4 translate-x-1/4 -z-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-4">
+          <p className="text-gojek-green font-bold text-sm uppercase tracking-widest">Layanan</p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-slate-900 tracking-tighter uppercase">
+            Asistensi <span className="text-gojek-green">Keberatan</span> <br />Kepabeanan & Cukai
+          </h1>
+        </div>
+      </section>
 
-      {/* First Text */}
-      <section className="pb-26 overflow-hidden md:pt-40 xl:pb-16 xl:pt-1">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="ml-8 md:w-1/2 md:mr-0 mr-7">
-              <div>
-                <img
-                  className="mb-8 mt-20 h-38 md:h-auto w-full rounded-lg"
-                  src="/images/about/service6.jpg"
-                  alt="product image"
-                />
+      <section className="pb-16 sm:pb-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16">
+            <div className="space-y-8">
+              <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+                <img className="w-full h-auto object-cover" src="/images/about/service6.jpg" alt="Asistensi Keberatan Kepabeanan dan Cukai" />
               </div>
-              <h1 className="mb-5 text-3xl font-bold text-black">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 uppercase tracking-tighter">
                 Asistensi Keberatan Kepabeanan dan Cukai
-              </h1>
-              <p className="mb-5 text-justify">
-                Sengketa kepabeanan dan cukai adalah peristiwa yang sering
-                terjadi dalam kegiatan impor. Importir tidak sependapat dengan
-                penetapan Pejabat Bea dan Cukai. Dalam UU kepabeanan dan Cukai,
-                upaya yang dapat dilakukan Importir atau pengusaha BKC yang
-                menolak penetapan Pejabat Bea dan Cukai dapat menempuh jalur
-                keberatan kepada Dirjend. Bea dan Cukai. Apabila hal ini gagal,
-                maka upaya hukum berikutnya dapat dilakukan dengan pengajuan
-                banding ke Pengadilan Pajak. <br />
-              </p>
-              <p className="mb-5 text-justify">
-                <span className="font-bold">
-                  Perusahan Anda terkena notul SPTNP ataupun SPKTNP dan Anda
-                  tidak puas dengan itu? Tim kami akan membantu Anda melakukan
-                  upaya keberatan kepada DJBC maupun banding ke Pengadilan pajak
-                  .
-                </span>{" "}
-                <br />
-              </p>
-              <p className="mb-5 text-justify">
-                Kami memaklumi kesibukan dan menghargai waktu Anda yang sangat
-                berharga. Untuk itu, konsultasi yang kami berikan sangat
-                fleksibel mengikuti kesiapan Anda . Media konsultasi dapat
-                dipilih sesuai kenyamanan Anda.
-              </p>
+              </h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed font-medium">
+                <p>
+                  Sengketa kepabeanan dan cukai adalah peristiwa yang sering
+                  terjadi dalam kegiatan impor. Importir tidak sependapat dengan
+                  penetapan Pejabat Bea dan Cukai.
+                </p>
+                <p>
+                  <span className="font-black text-slate-900">
+                    Perusahan Anda terkena notul SPTNP ataupun SPKTNP dan Anda
+                    tidak puas dengan itu? Tim kami akan membantu Anda melakukan
+                    upaya keberatan kepada DJBC maupun banding ke Pengadilan pajak.
+                  </span>
+                </p>
+                <p>
+                  Kami memaklumi kesibukan dan menghargai waktu Anda yang sangat
+                  berharga. Untuk itu, konsultasi yang kami berikan sangat
+                  fleksibel mengikuti kesiapan Anda.
+                </p>
+              </div>
             </div>
-            {/* Service Form */}
-            <ServiceForm />
-            {/* Service Form */}
+            <div>
+              <ServiceForm />
+            </div>
           </div>
         </div>
       </section>
-      {/* First Text */}
     </div>
   );
 };
 
-export default FormContact;
+export default KeberatanKepabeananPage;

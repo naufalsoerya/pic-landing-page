@@ -1,379 +1,111 @@
-"use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { MapPin, Mail, Phone } from "lucide-react";
+import { site, footerLinks } from "@/config/site";
 
 const Footer = () => {
   return (
-    <>
-      <footer className="border-t border-stroke bg-slate-500 text-white">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-4 2xl:px-0">
-          {/* <!-- Footer Top --> */}
-          <div className="md:py-20 py-12 lg:py-14">
-            <div className="flex flex-wrap gap-9">
-              <motion.div
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: -20,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                  },
-                }}
-                initial="hidden"
-                whileInView="visible"
-                transition={{ duration: 1, delay: 0.5 }}
-                viewport={{ once: true }}
-                className="animate_top w-full px-4 md:w-1/2 md:px-0 lg:w-1/3 md:ml-12 md:mr-5.5"
-              >
-                <Link href="index.html" className="relative">
-                  <Image
-                    width={200}
-                    height={100}
-                    src="/images/logo/logo-light.svg"
-                    alt="Logo"
-                    className=""
-                  />
-                </Link>
-                <p className="mb-8 mt-5 text-justify">
-                  Platform belajar dan konsultasi spesialis kepabeanan dan cukai
-                  milik PT Pro Insani Cendekia
-                </p>
-                <div className="flex items-center">
-                  <Image
-                    width={60}
-                    height={60}
-                    src="/images/logo/logo-home.png"
-                    alt="Logo"
-                    className="mr-5"
-                  />
-                  <p className="mb-1.5 text-justify text-sectiontitle">
-                    <span className="font-bold">LOKASI KAMI</span>
-                    <br />
-                    Komplek Rukan Taman (Ruko Medical) Pondok Kelapa. Jl. Pondok
-                    Kelapa Raya, Blok D/6 Pondok Kelapa, Duren Sawit, JAKARTA
-                    TIMUR 13450
-                  </p>
-                </div>
-              </motion.div>
-
-              <div className="mr-14 flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/4">
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top"
-                >
-                  <h4 className="md:ml-0 ml-6 mb-5 mt-4 text-itemtitle2 font-bold">
-                    LAYANAN KAMI
-                  </h4>
-
-                  <ul className="md:ml-0 ml-5">
-                    <li className="mb-2">
-                      ⚪ Konsultasi Masalah Kepabeanan dan Cukai
-                    </li>
-                    <li className="mb-2">⚪ Penetapan Klasifikasi Barang</li>
-                    <li className="mb-2">⚪ Audit Kepabeanan dan Cukai</li>
-                    <li className="mb-2">
-                      ⚪ Review Kepatuhan dan Mitigasi Risiko
-                    </li>
-                    <li className="mb-2">
-                      ⚪ Inhouse Training Kepabeanan dan Cukai
-                    </li>
-                    <li className="mb-2">
-                      ⚪ Keberatan dan Banding Kepabeanan dan Cukai
-                    </li>
-                  </ul>
-                </motion.div>
-
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top md:ml-10"
-                >
-                  <div>
-                    <h4 className="md:ml-0 ml-6 mb-5 mt-4 text-itemtitle2 font-bold">
-                      HUBUNGI KAMI
-                    </h4>
-
-                    <div className="mb-2 flex items-center justify-between md:flex-row">
-                      <Image
-                        width={40}
-                        height={50}
-                        src="/images/logo/logo-phone.png"
-                        alt="Logo"
-                        className="md:ml-0 ml-6 mb-3 mr-0 md:mb-0 md:mr-5 md:mt-0 mt-3"
-                      />
-                      <p className="md:ml-0 mb-1.5 md:text-sectiontitle md:text-left">
-                        0812 8484 1223 (Training)
-                        <br />
-                        0818 0612 1812 (Consulting)
-                      </p>
-                    </div>
-
-                    <div className="mb-6 flex items-center md:flex-row">
-                      <Image
-                        width={40}
-                        height={50}
-                        src="/images/logo/logo-email.png"
-                        alt="Logo"
-                        className="md:ml-0 ml-6 mb-3 mr-0 md:mb-0 md:mr-5 md:mt-0 mt-2"
-                      />
-                      <p className="md:ml-0 ml-6 mb-1.5 md:text-sectiontitle md:text-left">
-                        info@pictraining.co.id
-                        <br />
-                        Konsultasi@picconsulting.id 
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex">
-                    <Link
-                      href="http://facebook.com/kelaskepabeanan"
-                      aria-label="social icon"
-                    >
-                      <Image
-                        width={60}
-                        height={50}
-                        src="/images/logo/logo-facebook.png"
-                        alt="Logo"
-                        className="mr-4 md:ml-0 ml-18"
-                      />
-                    </Link>
-                    <Link
-                      href="http://instagram.com/trainingkepabeanan"
-                      aria-label="social icon"
-                    >
-                      <Image
-                        width={35}
-                        height={50}
-                        src="/images/logo/logo-instagram.png"
-                        alt="Logo"
-                        className="mr-8"
-                      />
-                    </Link>
-                    <Link
-                      href="https://www.youtube.com/@trainingkepabeanan9506"
-                      aria-label="social icon"
-                    >
-                      <Image
-                        width={50}
-                        height={60}
-                        src="/images/logo/logo-youtube.png"
-                        alt="Logo"
-                        className=""
-                      />
-                    </Link>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
+    <footer className="py-12 sm:py-20 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-12">
+        {/* Brand column */}
+        <div className="col-span-1 md:col-span-2 space-y-4 sm:space-y-6">
+          <div className="flex items-center">
+            <Image
+              src="/images/logo/logo-light.svg"
+              alt="PIC Training"
+              width={140}
+              height={52}
+              className="h-7 w-auto sm:h-12 min-w-[120px] sm:min-w-[160px] max-w-[200px] object-contain object-left shrink-0"
+            />
           </div>
-          {/* <!-- Footer Top --> */}
+          <p className="text-slate-500 text-sm sm:text-base max-w-md">
+            {site.description}
+          </p>
+          <p className="text-slate-500 font-medium max-w-md flex items-start gap-3 text-sm sm:text-base">
+            <MapPin size={20} className="shrink-0 text-slate-400 mt-0.5" />
+            {site.address}
+          </p>
+          <p className="text-slate-500 font-bold flex items-center gap-3 text-sm sm:text-base">
+            <Phone size={18} className="text-slate-400 shrink-0" />
+            <span>
+              {site.phone} (Training) / {site.phone2} (Consulting)
+            </span>
+          </p>
+          <p className="text-slate-500 font-bold flex items-center gap-3 text-sm sm:text-base break-all">
+            <Mail size={18} className="text-slate-400 shrink-0" />
+            <span>
+              {site.email} / {site.email2}
+            </span>
+          </p>
 
-          {/* <!-- Footer Bottom --> */}
-          <div className="flex flex-col flex-wrap items-center justify-center gap-5 border-t border-stroke py-7 dark:border-strokedark lg:flex-row lg:justify-between lg:gap-0">
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top"
+          {/* Social links */}
+          <div className="flex items-center gap-4 pt-2">
+            <Link
+              href={site.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-gojek-green transition-colors"
+              aria-label="Facebook"
             >
-              <ul className="flex items-center gap-8">
-                <li>
-                  <a
-                    href="#"
-                    className="pointer-events-none hover:text-primary"
-                  >
-                    English
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="pointer-events-none hover:text-primary"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="pointer-events-none hover:text-primary"
-                  >
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top"
+              <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z" />
+              </svg>
+            </Link>
+            <Link
+              href={site.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-gojek-green transition-colors"
+              aria-label="Instagram"
             >
-              <p>&copy; {new Date().getFullYear()} PIC. All rights reserved</p>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top"
+              <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </Link>
+            <Link
+              href={site.social.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-gojek-green transition-colors"
+              aria-label="YouTube"
             >
-              <ul className="flex items-center gap-5">
-                <li>
-                  <Link
-                    href="http://facebook.com/kelaskepabeanan"
-                    aria-label="social icon"
-                  >
-                    <svg
-                      className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_48_1499)">
-                        <path
-                          d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z"
-                          fill=""
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1499">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="http://instagram.com/trainingkepabeanan"
-                    aria-label="social icon"
-                  >
-                    <svg
-                      className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_48_1502)">
-                        <path
-                          d="M22.162 5.65593C21.3985 5.99362 20.589 6.2154 19.76 6.31393C20.6337 5.79136 21.2877 4.96894 21.6 3.99993C20.78 4.48793 19.881 4.82993 18.944 5.01493C18.3146 4.34151 17.4803 3.89489 16.5709 3.74451C15.6615 3.59413 14.7279 3.74842 13.9153 4.18338C13.1026 4.61834 12.4564 5.30961 12.0771 6.14972C11.6978 6.98983 11.6067 7.93171 11.818 8.82893C10.1551 8.74558 8.52832 8.31345 7.04328 7.56059C5.55823 6.80773 4.24812 5.75098 3.19799 4.45893C2.82628 5.09738 2.63095 5.82315 2.63199 6.56193C2.63199 8.01193 3.36999 9.29293 4.49199 10.0429C3.828 10.022 3.17862 9.84271 2.59799 9.51993V9.57193C2.59819 10.5376 2.93236 11.4735 3.54384 12.221C4.15532 12.9684 5.00647 13.4814 5.95299 13.6729C5.33661 13.84 4.6903 13.8646 4.06299 13.7449C4.32986 14.5762 4.85 15.3031 5.55058 15.824C6.25117 16.345 7.09712 16.6337 7.96999 16.6499C7.10247 17.3313 6.10917 17.8349 5.04687 18.1321C3.98458 18.4293 2.87412 18.5142 1.77899 18.3819C3.69069 19.6114 5.91609 20.2641 8.18899 20.2619C15.882 20.2619 20.089 13.8889 20.089 8.36193C20.089 8.18193 20.084 7.99993 20.076 7.82193C20.8949 7.2301 21.6016 6.49695 22.163 5.65693L22.162 5.65593Z"
-                          fill=""
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1502">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.youtube.com/@trainingkepabeanan9506"
-                    aria-label="social icon"
-                  >
-                    <svg
-                      className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_48_1505)">
-                        <path
-                          d="M6.94 5.00002C6.93974 5.53046 6.72877 6.03906 6.35351 6.41394C5.97825 6.78883 5.46944 6.99929 4.939 6.99902C4.40857 6.99876 3.89997 6.78779 3.52508 6.41253C3.1502 6.03727 2.93974 5.52846 2.94 4.99802C2.94027 4.46759 3.15124 3.95899 3.5265 3.5841C3.90176 3.20922 4.41057 2.99876 4.941 2.99902C5.47144 2.99929 5.98004 3.21026 6.35492 3.58552C6.72981 3.96078 6.94027 4.46959 6.94 5.00002ZM7 8.48002H3V21H7V8.48002ZM13.32 8.48002H9.34V21H13.28V14.43C13.28 10.77 18.05 10.43 18.05 14.43V21H22V13.07C22 6.90002 14.94 7.13002 13.28 10.16L13.32 8.48002Z"
-                          fill=""
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1505">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
-                </li>
-              </ul>
-            </motion.div>
+              <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </Link>
           </div>
-          {/* <!-- Footer Bottom --> */}
         </div>
-      </footer>
-    </>
+
+        {/* Footer link groups */}
+        {footerLinks.map((group) => (
+          <div key={group.title}>
+            <h4 className="font-black text-slate-900 mb-6 uppercase tracking-widest text-sm">
+              {group.title}
+            </h4>
+            <ul className="space-y-4 text-slate-500 font-bold text-sm">
+              {group.links.map((link) => (
+                <li key={`${group.title}-${link.label}`}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-gojek-green transition-colors"
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-12 sm:mt-20 pt-8 sm:pt-10 border-t border-slate-50 text-slate-400 text-xs sm:text-sm font-bold text-center flex flex-col md:flex-row justify-between gap-4">
+        <p>© {new Date().getFullYear()} PIC Training Indonesia. All rights reserved.</p>
+        <p className="uppercase tracking-tighter">Your Professional Development Partner</p>
+      </div>
+    </footer>
   );
 };
 

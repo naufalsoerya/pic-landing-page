@@ -1,148 +1,220 @@
 "use client";
-import Image from "next/image";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import menuData from "./menuData";
+import { Menu, Home, Briefcase, GraduationCap, Phone, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { navLinks } from "@/config/site";
+import { cn } from "@/lib/utils";
+
+const navIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "/": Home,
+  "/contact": Phone,
+};
 
 const Header = () => {
-  const [navigationOpen, setNavigationOpen] = useState(false);
-  const [dropdownToggler, setDropdownToggler] = useState(false);
-  const [stickyMenu, setStickyMenu] = useState(false);
-
-  const pathUrl = usePathname();
-
-  // Sticky menu
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-  });
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-5 ${
-        stickyMenu
-          ? "bg-gray-300 !py-4 text-gray-700 shadow transition duration-100"
-          : ""
-      }`}
+      className={cn(
+        "fixed z-[99999] transition-all duration-500 ease-out",
+        scrolled
+          ? "top-4 left-6 right-6 header-glass py-4 rounded-2xl md:left-6 md:right-6 md:top-5"
+          : "top-0 left-0 right-0 bg-transparent py-6"
+      )}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-10">
-        <div className="flex w-full items-center justify-between xl:w-1/5">
-          <a href="/">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center min-h-[56px] sm:min-h-0">
+        {/* Logo */}
+        <div className="flex-1 flex justify-start min-w-0">
+          <Link
+            href="/"
+            className="flex items-center cursor-pointer py-2 -my-2 min-h-[44px] shrink-0"
+            aria-label="PIC Training - Beranda"
+          >
             <Image
               src="/images/logo/logo-light.svg"
-              alt="logo"
-              width={80}
-              height={10}
-              className="w-36 md:w-80" 
+              alt="PIC Training"
+              width={140}
+              height={52}
+              className="h-10 w-auto sm:h-12 min-w-[120px] sm:min-w-[160px] max-w-[200px] object-contain object-left"
             />
-          </a>
-
-          {/* <!-- Hamburger Toggle BTN --> */}
-          <button
-            aria-label="hamburger Toggler"
-            className="block xl:hidden"
-            onClick={() => setNavigationOpen(!navigationOpen)}
-          >
-            <span className="relative block h-5.5 w-5.5 cursor-pointer">
-              <span className="absolute right-0 block h-full w-full">
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-300" : "w-0"
-                  }`}
-                ></span>
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "delay-400 !w-full" : "w-0"
-                  }`}
-                ></span>
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-500" : "w-0"
-                  }`}
-                ></span>
-              </span>
-              <span className="du-block absolute right-0 h-full w-full rotate-45">
-                <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-[0]" : "h-full"
-                  }`}
-                ></span>
-                <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-200" : "h-0.5"
-                  }`}
-                ></span>
-              </span>
-            </span>
-          </button>
-          {/* <!-- Hamburger Toggle BTN --> */}
+          </Link>
         </div>
 
-        {/* Nav Menu Start   */}
-        <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
-            navigationOpen &&
-            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
-          }`}
-        >
-          <nav>
-            <ul className="flex flex-col gap-5 font-bold md:ml-32 xl:flex-row xl:items-center xl:gap-12">
-              {menuData.map((menuItem, key) => (
-                <li key={key} className={menuItem.submenu && "group relative"}>
-                  {menuItem.submenu ? (
-                    <>
-                      <button
-                        onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
-                      >
-                        {menuItem.title}
-                        <span>
-                          <svg
-                            className="h-3 w-3 cursor-pointer fill-waterloo group-hover:fill-primary"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                          >
-                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                          </svg>
-                        </span>
-                      </button>
+        {/* Desktop Navigation */}
+        <nav className="hidden xl:flex items-center gap-1 shrink-0">
+          {navLinks.map((link) => {
+            const Icon = navIcons[link.href];
+            const isActive = pathname === link.href;
+            const hasSubmenu = link.submenu && link.submenu.length > 0;
 
-                      <ul
-                        className={`dropdown ${dropdownToggler ? "flex" : ""}`}
+            if (hasSubmenu) {
+              return (
+                <div key={link.label} className="group relative">
+                  <Button
+                    variant={isActive ? "default" : "ghost"}
+                    size="sm"
+                    className={cn(
+                      "gap-1.5 font-bold",
+                      isActive && "bg-gojek-green text-white hover:bg-gojek-green-hover"
+                    )}
+                  >
+                    {link.label}
+                    <ChevronDown className="h-3 w-3" />
+                  </Button>
+                  <div className="dropdown">
+                    {link.submenu!.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        target={sub.external ? "_blank" : undefined}
+                        rel={sub.external ? "noopener noreferrer" : undefined}
+                        className="text-sm font-medium text-slate-600 hover:text-gojek-green transition-colors py-1"
                       >
-                        {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="hover:text-primary md:w-full w-64">
-                            <Link href={item.path || "/"} target="blank">
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  ) : (
-                    <Link
-                      href={`${menuItem.path}`}
-                      className={
-                        pathUrl === menuItem.path
-                          ? "text-primary hover:text-primary"
-                          : "hover:text-primary"
-                      }
-                    >
-                      {menuItem.title}
-                    </Link>
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link key={link.href} href={link.href}>
+                <Button
+                  variant={isActive ? "default" : "ghost"}
+                  size="sm"
+                  className={cn(
+                    "gap-2 font-bold",
+                    isActive && "bg-gojek-green text-white hover:bg-gojek-green-hover"
                   )}
-                </li>
-              ))}
-            </ul>
-          </nav>
+                >
+                  {Icon && <Icon className="h-4 w-4" />}
+                  {link.label}
+                </Button>
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right side */}
+        <div className="flex-1 flex items-center justify-end gap-3 min-w-0">
+          <div className="hidden xl:block">
+            <Button size="default" asChild className="shrink-0 bg-gojek-green hover:bg-gojek-green-hover text-white">
+              <Link href="/contact">Konsultasi Gratis</Link>
+            </Button>
+          </div>
+
+          {/* Mobile menu */}
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild className="xl:hidden">
+              <Button variant="ghost" size="icon" className="text-slate-700 min-w-[44px] min-h-[44px]">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[min(100vw-2rem,320px)] max-w-[320px] p-6 overflow-y-auto">
+              <SheetHeader>
+                <SheetTitle className="text-left">Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1 mt-8" aria-label="Mobile navigation">
+                {navLinks.map((link) => {
+                  const Icon = navIcons[link.href];
+                  const isActive = pathname === link.href;
+                  const hasSubmenu = link.submenu && link.submenu.length > 0;
+
+                  if (hasSubmenu) {
+                    return (
+                      <div key={link.label}>
+                        <button
+                          onClick={() =>
+                            setOpenSubmenu(openSubmenu === link.label ? null : link.label)
+                          }
+                          className={cn(
+                            "flex items-center justify-between w-full gap-3 font-bold transition-colors py-4 px-3 rounded-xl -mx-3 min-h-[48px]",
+                            "text-slate-700 hover:text-gojek-green active:bg-slate-100"
+                          )}
+                        >
+                          <span className="flex items-center gap-3">
+                            <Briefcase className="h-5 w-5 shrink-0" />
+                            {link.label}
+                          </span>
+                          <ChevronDown
+                            className={cn(
+                              "h-4 w-4 transition-transform",
+                              openSubmenu === link.label && "rotate-180"
+                            )}
+                          />
+                        </button>
+                        {openSubmenu === link.label && (
+                          <div className="ml-8 flex flex-col gap-1 mb-2">
+                            {link.submenu!.map((sub) => (
+                              <Link
+                                key={sub.href}
+                                href={sub.href}
+                                target={sub.external ? "_blank" : undefined}
+                                onClick={() => setOpen(false)}
+                                className="text-sm text-slate-600 hover:text-gojek-green py-2 px-3 rounded-lg transition-colors"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "flex items-center gap-3 font-bold transition-colors py-4 px-3 rounded-xl -mx-3 min-h-[48px]",
+                        isActive
+                          ? "text-gojek-green bg-orange-50"
+                          : "text-slate-700 hover:text-gojek-green active:bg-slate-100"
+                      )}
+                    >
+                      {Icon && <Icon className="h-5 w-5 shrink-0" />}
+                      {link.label}
+                    </Link>
+                  );
+                })}
+                <div className="flex flex-col gap-2 mt-4">
+                  <Button
+                    size="default"
+                    className="w-full min-h-[48px] bg-gojek-green hover:bg-gojek-green-hover text-white"
+                    asChild
+                  >
+                    <Link href="/contact" onClick={() => setOpen(false)}>
+                      Konsultasi Gratis
+                    </Link>
+                  </Button>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

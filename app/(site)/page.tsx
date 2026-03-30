@@ -1,22 +1,38 @@
-import { Metadata } from "next";
-import Hero from "@/components/Hero";
-import Jumbotron from "@/components/Jumbotron";
-import Feature from "@/components/Features";
-import Jumbotron2 from "@/components/Jumbotron2";
+"use client";
 
-export const metadata: Metadata = {
-  title: "PIC Training - Spesialis training kepabeanan, ekspor, dan impor",
-  description: "PIC Training landing page",
-  // other metadata
-};
+import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
+import Feature from "@/components/Features";
+import WhyUs from "@/components/WhyUs";
+import Testimonial from "@/components/Testimonial";
+import CTA from "@/components/CTA";
+import FAQ from "@/components/FAQ";
+import { AnimateIn } from "@/components/ui/animate-in";
 
 export default function Home() {
   return (
-    <main>
-      <Jumbotron />
-      <Hero />
-      <Feature />
-      <Jumbotron2 />
-    </main>
+    <>
+      <AnimateIn variant="fade-up">
+        <Hero />
+      </AnimateIn>
+      <AnimateIn variant="fade-up">
+        <AboutSection />
+      </AnimateIn>
+      <AnimateIn variant="fade-up">
+        <Feature />
+      </AnimateIn>
+      <AnimateIn variant="fade-up">
+        <WhyUs />
+      </AnimateIn>
+      <AnimateIn variant="fade-up">
+        <Testimonial />
+      </AnimateIn>
+      <AnimateIn variant="fade-up">
+        <CTA />
+      </AnimateIn>
+      <AnimateIn variant="fade-up">
+        <FAQ />
+      </AnimateIn>
+    </>
   );
 }
